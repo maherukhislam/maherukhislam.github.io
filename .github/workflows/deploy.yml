@@ -23,16 +23,16 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 20
+          # Cache npm's global cache (~/.npm) keyed on package-lock.json
+          cache: npm
 
-      # No package-lock.json is committed, so install (not ci)
+      # package-lock.json is committed → npm ci gives reproducible installs
       - name: Install dependencies
-        run: npm install --no-audit --no-fund
+        run: npm ci --no-audit --no-fund
 
-      # Project sites live under https://<user>.github.io/<repo>/ — this makes
-      # all asset URLs (/hero-portrait.png, /logo.svg, …) resolve correctly.
-      # DELETE this step if the repo is named <username>.github.io.
-      - name: Set base path
-        run: echo "NEXT_PUBLIC_BASE_PATH=/${{ github.event.repository.name }}" >> $GITHUB_ENV
+      # This repo is named <username>.github.io (a user site), so Pages serves
+      # it from the domain root — no NEXT_PUBLIC_BASE_PATH is needed.
+      # next.config.ts already defaults basePath to "".
 
       - name: Build
         run: npm run build
