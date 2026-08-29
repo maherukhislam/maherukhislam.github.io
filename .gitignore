@@ -1,0 +1,25 @@
+# dependencies
+node_modules/
+
+# next.js build output
+/.next/
+/out/
+next-env.d.ts
+*.tsbuildinfo
+
+# logs & misc
+*.log
+*.pid
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# environment variables
+.env
+.env.*
+
+# local tooling / private working files
+.claude/
+.z-ai-config/
+.cline/
+skills/
