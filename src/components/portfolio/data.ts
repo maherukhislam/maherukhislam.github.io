@@ -356,7 +356,6 @@ export const education = [
     school: "Dhaka Commerce College",
     period: "2024–present · HSC 2026",
     subjects: ["Higher Mathematics", "Physics", "Chemistry", "ICT"],
-    next: "Next: BSc in Computer Science / Software Engineering",
     current: true,
   },
   {
