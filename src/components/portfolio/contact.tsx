@@ -16,7 +16,7 @@ function SectionLabel({ text }: { text: string }) {
         <span className="block h-px w-10 bg-white/20" />
         <span className="absolute inset-0 block animate-[lineMove_2s_linear_infinite] bg-gradient-to-r from-transparent via-white/80 to-transparent" />
       </span>
-      <span className="font-mono text-[10px] uppercase tracking-[0.45em] text-white/35">
+      <span className="font-mono text-[10px] uppercase tracking-[0.45em] text-white/60">
         {text}
       </span>
       <span className="relative overflow-hidden" aria-hidden="true">
@@ -87,7 +87,7 @@ export function Contact() {
               })}
             </ul>
 
-            <p className="flex items-center gap-2 font-mono text-xs uppercase tracking-[0.25em] text-white/40">
+            <p className="flex items-center gap-2 font-mono text-xs uppercase tracking-[0.25em] text-white/60">
               <MapPin className="h-3.5 w-3.5" aria-hidden="true" />
               {profile.location}
             </p>
@@ -101,7 +101,7 @@ export function Contact() {
                 aria-hidden="true"
                 className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-white/60 to-transparent"
               />
-              <p className="font-mono text-[10px] uppercase tracking-[0.3em] text-white/40">
+              <p className="font-mono text-[10px] uppercase tracking-[0.3em] text-white/60">
                 Direct line
               </p>
               <a
@@ -112,7 +112,7 @@ export function Contact() {
                 {profile.email}
               </a>
               <p className="mt-4 text-sm leading-relaxed text-white/50">
-                Currently a science student (HSC 2026) in Dhaka — planning to
+                Currently a science student (HSC 2026) in Dhaka, planning to
                 study CS or software engineering, and building useful web tools
                 in Bangladesh along the way.
               </p>
@@ -144,13 +144,13 @@ export function SiteFooter() {
           </span>
           <div className="leading-tight">
             <p className="text-sm font-semibold text-white/90">{profile.name}</p>
-            <p className="font-mono text-[10px] uppercase tracking-[0.25em] text-white/40">
+            <p className="font-mono text-[10px] uppercase tracking-[0.25em] text-white/60">
               Creative Web Builder
             </p>
           </div>
         </div>
 
-        <p className="font-mono text-[10px] uppercase tracking-[0.3em] text-white/40">
+        <p className="font-mono text-[10px] uppercase tracking-[0.3em] text-white/60">
           Built keyboard-first · WCAG-minded · {new Date().getFullYear()}
         </p>
       </div>

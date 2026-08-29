@@ -26,12 +26,12 @@ jobs:
           # Cache npm's global cache (~/.npm) keyed on package-lock.json
           cache: npm
 
-      # package-lock.json is committed → npm ci gives reproducible installs
+      # package-lock.json is committed, so npm ci gives reproducible installs
       - name: Install dependencies
         run: npm ci --no-audit --no-fund
 
       # This repo is named <username>.github.io (a user site), so Pages serves
-      # it from the domain root — no NEXT_PUBLIC_BASE_PATH is needed.
+      # it from the domain root; no NEXT_PUBLIC_BASE_PATH is needed.
       # next.config.ts already defaults basePath to "".
 
       - name: Build

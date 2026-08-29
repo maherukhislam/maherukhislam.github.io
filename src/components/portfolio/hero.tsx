@@ -50,9 +50,9 @@ export function Hero({ start = true }: { start?: boolean }) {
     <section
       id="home"
       aria-label="Introduction"
-      className="relative h-screen min-h-[640px] w-full overflow-hidden bg-black"
+      className="relative h-svh min-h-[640px] w-full overflow-hidden bg-black"
     >
-      {/* Backdrop visual: hero portrait (template's photo, restored) — RGB-split glitch
+      {/* Backdrop visual: hero portrait (template's photo, restored) - RGB-split glitch
           layers + radial mask fading into the black page + gradient scrims for readability */}
       <div aria-hidden="true" className="absolute inset-0">
         <div className="absolute left-1/2 top-[42%] h-[70vmin] w-[70vmin] -translate-x-1/2 -translate-y-1/2 rounded-full bg-white/[0.05] blur-[90px]" />
@@ -85,23 +85,25 @@ export function Hero({ start = true }: { start?: boolean }) {
       </div>
 
       <div className="relative z-10 flex h-full w-full flex-col justify-between px-6 pb-10 pt-24 md:px-12">
-        {/* Giant typed name — click to cycle color mode */}
-        <button
-          type="button"
-          onClick={() => setColorMode((prev) => (prev + 1) % colorModes.length)}
-          aria-label={`Maherukh — giant heading. Click to change color style (style ${colorMode + 1} of ${colorModes.length})`}
-          className={`font-display w-fit text-left text-[21vw] uppercase leading-[0.85] tracking-[-0.03em] transition-all duration-300 md:text-[15vw] lg:text-[13rem] ${
-            colorModes[colorMode]
-          }`}
-        >
-          {displayed || "\u00A0"}
-          {!reduceMotion && displayed.length < text.length ? (
-            <span
-              aria-hidden="true"
-              className="animate-cursor-blink ml-1 inline-block h-[0.7em] w-[0.08em] translate-y-[0.08em] bg-white/80"
-            />
-          ) : null}
-        </button>
+        {/* Giant typed name - click to cycle color mode */}
+        <h1 className="w-fit">
+          <button
+            type="button"
+            onClick={() => setColorMode((prev) => (prev + 1) % colorModes.length)}
+            aria-label={`Maherukh. Activate to change the name color style (style ${colorMode + 1} of ${colorModes.length})`}
+            className={`font-display text-left text-[21vw] uppercase leading-[0.85] tracking-[-0.03em] transition-all duration-300 md:text-[15vw] lg:text-[13rem] ${
+              colorModes[colorMode]
+            }`}
+          >
+            {displayed || "\u00A0"}
+            {!reduceMotion && displayed.length < text.length ? (
+              <span
+                aria-hidden="true"
+                className="animate-cursor-blink ml-1 inline-block h-[0.7em] w-[0.08em] translate-y-[0.08em] bg-white/80"
+              />
+            ) : null}
+          </button>
+        </h1>
 
         {/* Statement */}
         <p
@@ -161,7 +163,7 @@ export function MarqueeBand() {
         {[...marqueeItems, ...marqueeItems, ...marqueeItems].map((item, i) => (
           <span
             key={i}
-            className="flex items-center gap-16 text-xs font-medium uppercase tracking-[0.3em] text-white/40"
+            className="flex items-center gap-16 text-xs font-medium uppercase tracking-[0.3em] text-white/60"
           >
             {item}
             <span className="text-white/20">✦</span>

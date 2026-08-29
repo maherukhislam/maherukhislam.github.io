@@ -96,7 +96,7 @@ export const projects: Project[] = [
     url: "https://dccnsc.org",
     urlLabel: "dccnsc.org",
     category: "Web Platform · Full-Stack",
-    timeline: "2025–present",
+    timeline: "2025-present",
     role: "Full-Stack Developer",
     status: "Live",
     problem:
@@ -161,7 +161,7 @@ export const projects: Project[] = [
   {
     id: "a2abroad",
     index: "03",
-    title: "A2 Abroad — Study-Abroad Consultancy Portal",
+    title: "A2 Abroad - Study-Abroad Consultancy Portal",
     short:
       "A Dhaka study-abroad consultancy ran its whole student pipeline on phone calls and paper. I built the portal that moved it online, with separate dashboards for students, consultants, and admins.",
     category: "Client Project · Full-Stack Web Portal",
@@ -207,7 +207,7 @@ export const projects: Project[] = [
   {
     id: "a2english",
     index: "05",
-    title: "A2 English Academy — Financial Management System",
+    title: "A2 English Academy - Financial Management System",
     short:
       "An IELTS coaching center in Dhaka ran on paper cashbooks. I built them one portal for fees, installments, expenses, and reports, gated by role.",
     category: "Client Project · Internal Financial System",
@@ -266,7 +266,7 @@ export const recognitionHighlights = [
     icon: "atom" as const,
     title: "Physics Olympiad",
     note: "National Finalist",
-    org: "BDOC — Bangladesh Olympiad Challenge",
+    org: "BDOC - Bangladesh Olympiad Challenge",
     date: "2025",
   },
   {
@@ -288,12 +288,12 @@ export const recognitionHighlights = [
 
 export const recognitionAdditional = [
   {
-    title: "1st Place — ECO Spark Challenge 1.0",
+    title: "1st Place - ECO Spark Challenge 1.0",
     note: "Quiz Competition",
     org: "DCC Nature Study Club",
   },
   {
-    title: "2nd Place — IT Quiz (Junior)",
+    title: "2nd Place - IT Quiz (Junior)",
     note: "DCC Intra College CSE Fest 2025",
     org: "Dhaka Commerce College",
     date: "May 2025",
@@ -338,7 +338,7 @@ export const leadership = [
   {
     role: "Executive Treasurer",
     org: "DCC Nature Study Club",
-    period: "2024–present",
+    period: "2024-present",
     desc: "I run the finances of a 1,000+ member club as its treasurer. The treasury system the role runs on? I built that too, and the audits got a lot shorter.",
   },
   {
@@ -352,14 +352,14 @@ export const leadership = [
 
 export const education = [
   {
-    degree: "HSC — Science Group",
+    degree: "HSC - Science Group",
     school: "Dhaka Commerce College",
-    period: "2024–present · HSC 2026",
+    period: "2024-present · HSC 2026",
     subjects: ["Higher Mathematics", "Physics", "Chemistry", "ICT"],
     current: true,
   },
   {
-    degree: "SSC — Science Division",
+    degree: "SSC - Science Division",
     school: "",
     period: "Completed 2024",
     subjects: [],

@@ -43,9 +43,9 @@ export default function WelcomeScreen({
               </span>
             ))}
           </div>
-          <h1 className="mt-6 text-2xl font-black tracking-tight">
+          <p className="mt-6 text-2xl font-black tracking-tight">
             Md. Maherukh Islam
-          </h1>
+          </p>
           <p className="mt-2 text-sm text-white/60">
             Creative Web Builder · Portfolio
           </p>
@@ -72,7 +72,7 @@ export default function WelcomeScreen({
       }}
       className="fixed inset-0 z-[999] flex items-center justify-center overflow-hidden bg-black p-5"
       role="dialog"
-      aria-label="Welcome — portfolio introduction"
+      aria-label="Portfolio introduction"
     >
       {/* Background glow */}
       <div aria-hidden="true" className="pointer-events-none absolute inset-0">
@@ -137,14 +137,14 @@ export default function WelcomeScreen({
             </motion.span>
           </div>
 
-          <motion.h1
+          <motion.p
             initial={{ opacity: 0, y: 70 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 1.4, duration: 1.2, ease: [0.22, 1, 0.36, 1] }}
             className="text-center text-[clamp(24px,6vw,38px)] font-black leading-tight tracking-tight"
           >
             Portfolio
-          </motion.h1>
+          </motion.p>
         </div>
 
         {/* Subtitle */}
@@ -165,8 +165,8 @@ export default function WelcomeScreen({
           className="overflow-hidden rounded-full border border-white/10 bg-white/5 px-4 py-2 text-xs tracking-[0.25em] text-white/70 shadow-[0_0_30px_rgba(255,255,255,0.04)] backdrop-blur-md"
         >
           <motion.span
-            initial={{ width: "0ch" }}
-            animate={{ width: "16ch" }}
+            initial={{ width: "0em" }}
+            animate={{ width: "10.6em" }}
             transition={{ delay: 2.2, duration: 1.8, ease: "easeInOut" }}
             className="inline-block overflow-hidden whitespace-nowrap"
           >

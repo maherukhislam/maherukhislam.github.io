@@ -22,7 +22,7 @@ function SectionLabel({ text }: { text: string }) {
         <span className="block h-px w-10 bg-white/20" />
         <span className="absolute inset-0 block animate-[lineMove_2s_linear_infinite] bg-gradient-to-r from-transparent via-white/80 to-transparent" />
       </span>
-      <span className="font-mono text-[10px] uppercase tracking-[0.45em] text-white/35">
+      <span className="font-mono text-[10px] uppercase tracking-[0.45em] text-white/60">
         {text}
       </span>
       <span className="relative overflow-hidden" aria-hidden="true">
@@ -51,7 +51,7 @@ function ProjectCard({
           {project.index}
         </span>
         <div>
-          <p className="font-mono text-[10px] uppercase tracking-[0.25em] text-white/40">
+          <p className="font-mono text-[10px] uppercase tracking-[0.25em] text-white/60">
             {project.category}
           </p>
           <h3 className="mt-1.5 text-xl font-bold leading-tight tracking-tight text-white">
@@ -88,7 +88,7 @@ function ProjectCard({
             </li>
           ))}
           {project.tech.length > 4 ? (
-            <li className="rounded-full border border-white/10 bg-black/40 px-2.5 py-1 font-mono text-[10px] text-white/40">
+            <li className="rounded-full border border-white/10 bg-black/40 px-2.5 py-1 font-mono text-[10px] text-white/60">
               +{project.tech.length - 4}
             </li>
           ) : null}
@@ -157,7 +157,7 @@ function CertCard({
       </div>
       <p className="mt-2 text-xs leading-relaxed text-white/50">{org}</p>
       {date ? (
-        <p className="mt-auto pt-4 font-mono text-[10px] text-white/35">{date}</p>
+        <p className="mt-auto pt-4 font-mono text-[10px] text-white/60">{date}</p>
       ) : null}
     </div>
   )
@@ -223,7 +223,7 @@ export function Showcase() {
       <div className="relative z-10 mx-auto flex max-w-6xl flex-col items-center">
         <SectionLabel text="Showcase" />
         <span id="showcase-heading" className="sr-only">
-          Portfolio showcase — projects, certificates, and tech stack
+          Portfolio showcase: projects, certificates, and tech stack
         </span>
 
         <h2
@@ -306,8 +306,8 @@ export function Showcase() {
           {active === "certificates" ? (
             <div className="space-y-8">
               <div>
-                <p className="mb-4 text-center font-mono text-[10px] uppercase tracking-[0.4em] text-white/35">
-                  Highlights — most professionally relevant
+                <p className="mb-4 text-center font-mono text-[10px] uppercase tracking-[0.4em] text-white/60">
+                  Highlights: most professionally relevant
                 </p>
                 <div className="grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-4">
                   {recognitionHighlights.map((item, i) => (
@@ -318,7 +318,7 @@ export function Showcase() {
                     >
                       <CertCard
                         title={item.title}
-                        org={item.orgNote ? `${item.org} — ${item.orgNote}` : item.org}
+                        org={item.orgNote ? `${item.org} - ${item.orgNote}` : item.org}
                         note={item.note}
                         date={item.date}
                         highlight
@@ -328,7 +328,7 @@ export function Showcase() {
                 </div>
               </div>
               <div>
-                <p className="mb-4 text-center font-mono text-[10px] uppercase tracking-[0.4em] text-white/35">
+                <p className="mb-4 text-center font-mono text-[10px] uppercase tracking-[0.4em] text-white/60">
                   Additional certificates &amp; achievements
                 </p>
                 <div className="grid grid-cols-1 gap-4 md:grid-cols-2">

@@ -13,7 +13,7 @@ function AvailabilityTicker() {
   if (reduceMotion) {
     return (
       <div className="mb-6 flex items-center">
-        <span className="inline-block whitespace-nowrap font-mono text-[11px] uppercase tracking-[0.3em] text-white/60">
+        <span className="inline-block whitespace-nowrap font-mono text-[10px] uppercase tracking-[0.15em] text-white/60">
           {text}
         </span>
       </div>
@@ -23,14 +23,14 @@ function AvailabilityTicker() {
   return (
     <div className="mb-6 flex items-center" aria-label={text}>
       <motion.span
-        animate={{ width: ["0ch", "41ch", "41ch", "0ch"] }}
+        animate={{ width: ["0em", "32em", "32em", "0em"] }}
         transition={{
           duration: 6,
           repeat: Infinity,
           ease: "easeInOut",
           times: [0, 0.3, 0.8, 1],
         }}
-        className="inline-block overflow-hidden whitespace-nowrap font-mono text-[11px] uppercase tracking-[0.3em] text-white/60"
+        className="inline-block overflow-hidden whitespace-nowrap font-mono text-[10px] uppercase tracking-[0.15em] text-white/60"
       >
         {text}
       </motion.span>
@@ -46,7 +46,7 @@ function AvailabilityTicker() {
   )
 }
 
-/* Draggable glass ID card — lighter take on the template's physics band card */
+/* Draggable glass ID card - lighter take on the template's physics band card */
 function IdCard({ onClose }: { onClose: () => void }) {
   return (
     <motion.div
@@ -60,7 +60,7 @@ function IdCard({ onClose }: { onClose: () => void }) {
       whileDrag={{ scale: 1.03, rotate: 0 }}
       className="absolute right-4 top-4 z-30 w-[290px] cursor-grab overflow-hidden rounded-2xl border border-white/15 bg-black/70 shadow-2xl shadow-white/10 backdrop-blur-2xl active:cursor-grabbing sm:w-[320px]"
       role="group"
-      aria-label="Identity card — draggable"
+      aria-label="Identity card, draggable"
     >
       {/* shine edge */}
       <div
@@ -181,12 +181,12 @@ export function About() {
           </motion.span>
         </h2>
 
-        {/* Intro + core stack — two columns for breathing room */}
+        {/* Intro + core stack - two columns for breathing room */}
         <div className="mt-14 grid gap-12 lg:grid-cols-12 lg:gap-16">
           <motion.div {...anim(0.5)} className="lg:col-span-7">
             <p className="max-w-xl text-base font-medium leading-relaxed tracking-wide text-white/80 sm:text-lg">
               I&apos;m a science student in Dhaka. Since 2024 I&apos;ve built
-              and still maintain <span className="text-white">five production platforms</span> — a
+              and still maintain <span className="text-white">five production platforms</span>: a
               1,000-member club&apos;s first website, two treasury portals, a
               consultancy portal, and a security tool. Roughly 1,000 students
               and three organizations use them daily.
@@ -200,7 +200,7 @@ export function About() {
           </motion.div>
 
           <motion.div {...anim(0.65)} className="lg:col-span-5">
-            <p className="font-mono text-[10px] uppercase tracking-[0.45em] text-white/35">
+            <p className="font-mono text-[10px] uppercase tracking-[0.45em] text-white/60">
               Core Stack
             </p>
             <div className="mt-5 flex flex-wrap gap-3">
@@ -235,7 +235,7 @@ export function About() {
           </motion.div>
         </div>
 
-        {/* Stats — proof strip */}
+        {/* Stats - proof strip */}
         <motion.dl
           {...anim(0.85)}
           className="mt-20 grid grid-cols-2 gap-px overflow-hidden rounded-2xl border border-white/10 bg-white/10 lg:grid-cols-4"
@@ -245,7 +245,7 @@ export function About() {
               <dd className="text-4xl font-black tracking-tight text-white lg:text-5xl">
                 {stat.value}
               </dd>
-              <dt className="mt-2 font-mono text-[10px] uppercase tracking-[0.2em] text-white/40">
+              <dt className="mt-2 font-mono text-[10px] uppercase tracking-[0.2em] text-white/60">
                 {stat.label}
               </dt>
             </div>

@@ -19,7 +19,7 @@ function SectionLabel({ text }: { text: string }) {
         <span className="block h-px w-10 bg-white/20" />
         <span className="absolute inset-0 block animate-[lineMove_2s_linear_infinite] bg-gradient-to-r from-transparent via-white/80 to-transparent" />
       </span>
-      <span className="font-mono text-[10px] uppercase tracking-[0.45em] text-white/35">
+      <span className="font-mono text-[10px] uppercase tracking-[0.45em] text-white/60">
         {text}
       </span>
     </div>
@@ -67,7 +67,7 @@ export function Background() {
         <div className="mt-16 grid gap-12 lg:grid-cols-2 lg:gap-16">
           {/* Education */}
           <motion.div {...reveal(0.1)}>
-            <h3 className="flex items-center gap-4 font-mono text-[10px] uppercase tracking-[0.45em] text-white/35">
+            <h3 className="flex items-center gap-4 font-mono text-[10px] uppercase tracking-[0.45em] text-white/60">
               <GraduationCap className="h-4 w-4 text-white/50" aria-hidden="true" />
               Education
             </h3>
@@ -129,7 +129,7 @@ export function Background() {
 
           {/* Leadership */}
           <motion.div {...reveal(0.2)}>
-            <h3 className="flex items-center gap-4 font-mono text-[10px] uppercase tracking-[0.45em] text-white/35">
+            <h3 className="flex items-center gap-4 font-mono text-[10px] uppercase tracking-[0.45em] text-white/60">
               <HandHeart className="h-4 w-4 text-white/50" aria-hidden="true" />
               Leadership &amp; Service
             </h3>
@@ -150,13 +150,13 @@ export function Background() {
                       <span className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-white/10 bg-white/5 text-white/70">
                         <Icon className="h-4 w-4" aria-hidden="true" />
                       </span>
-                      <span className="font-mono text-xs text-white/40">{item.period}</span>
+                      <span className="font-mono text-xs text-white/60">{item.period}</span>
                     </div>
                     <h4 className="mt-3 text-base font-semibold text-white">{item.role}</h4>
                     <p className="mt-0.5 text-sm text-white/60">
                       {item.org}
                       {item.orgNote ? (
-                        <span className="text-white/40"> · {item.orgNote}</span>
+                        <span className="text-white/60"> · {item.orgNote}</span>
                       ) : null}
                     </p>
                     <p className="mt-2 text-sm leading-relaxed text-white/50">{item.desc}</p>
@@ -167,10 +167,10 @@ export function Background() {
           </motion.div>
         </div>
 
-        {/* Currently learning — slim footer row */}
+        {/* Currently learning - slim footer row */}
         <motion.div {...reveal(0.3)} className="mt-16">
           <div className="rounded-2xl border border-white/10 bg-white/[0.03] px-6 py-5">
-            <p className="font-mono text-[10px] uppercase tracking-[0.45em] text-white/35">
+            <p className="font-mono text-[10px] uppercase tracking-[0.45em] text-white/60">
               Currently Learning
             </p>
             <ul className="mt-4 flex flex-wrap gap-2">

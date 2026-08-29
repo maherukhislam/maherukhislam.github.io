@@ -2,7 +2,7 @@
   "name": "maherukh-portfolio",
   "version": "1.0.0",
   "private": true,
-  "description": "Personal portfolio of Maherukh Islam — Next.js, Tailwind CSS, Framer Motion. Static export deployed on GitHub Pages.",
+  "description": "Personal portfolio of Maherukh Islam. Next.js, Tailwind CSS, Framer Motion. Static export deployed on GitHub Pages.",
   "scripts": {
     "dev": "next dev -p 3000 2>&1 | tee dev.log",
     "build": "next build",

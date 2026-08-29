@@ -70,22 +70,22 @@ export default function ProjectModal({
             onClick={(e) => e.stopPropagation()}
             role="dialog"
             aria-modal="true"
-            aria-label={`${project.title} — project details`}
+            aria-label={`${project.title} - project details`}
           >
             {/* Header */}
             <div className="flex items-start justify-between gap-4">
               <div>
-                <p className="font-mono text-[10px] uppercase tracking-[0.3em] text-white/40">
+                <p className="font-mono text-[10px] uppercase tracking-[0.3em] text-white/60">
                   {project.category}
                   {project.timeline ? ` · ${project.timeline}` : ""}
                 </p>
                 <h3 className="mt-2 text-2xl font-black tracking-tight text-white sm:text-3xl">
                   {project.title}
                 </h3>
-                <p className="mt-2 text-sm text-white/50">
-                  <span className="text-white/40">Role:</span> {project.role}
+                <p className="mt-2 text-sm text-white/60">
+                  <span className="text-white/60">Role:</span> {project.role}
                   {project.version ? (
-                    <span className="font-mono text-white/40">
+                    <span className="font-mono text-white/60">
                       {" "}
                       · {project.version} · {project.license}
                     </span>
@@ -154,7 +154,7 @@ export default function ProjectModal({
             {/* Coverage */}
             {project.coverage ? (
               <div className="mt-6">
-                <p className="font-mono text-[10px] uppercase tracking-[0.3em] text-white/40">
+                <p className="font-mono text-[10px] uppercase tracking-[0.3em] text-white/60">
                   Coverage Areas
                 </p>
                 <ul className="mt-3 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
@@ -164,7 +164,7 @@ export default function ProjectModal({
                       className="rounded-xl border border-white/10 bg-white/[0.03] p-3.5"
                     >
                       <p className="text-sm font-semibold text-white">{item.area}</p>
-                      <p className="mt-1 font-mono text-xs leading-relaxed text-white/40">
+                      <p className="mt-1 font-mono text-xs leading-relaxed text-white/60">
                         {item.checks}
                       </p>
                     </li>
@@ -188,7 +188,7 @@ export default function ProjectModal({
             {/* Modules */}
             {project.modules ? (
               <div className="mt-6">
-                <p className="font-mono text-[10px] uppercase tracking-[0.3em] text-white/40">
+                <p className="font-mono text-[10px] uppercase tracking-[0.3em] text-white/60">
                   {project.modulesLabel ?? "Modules"}
                 </p>
                 <ul className="mt-3 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
@@ -228,7 +228,7 @@ export default function ProjectModal({
 
             {/* Tech */}
             <div className="mt-6 flex flex-wrap items-center gap-2 border-t border-white/10 pt-5">
-              <span className="font-mono text-[10px] uppercase tracking-[0.3em] text-white/40">
+              <span className="font-mono text-[10px] uppercase tracking-[0.3em] text-white/60">
                 Stack
               </span>
               {project.tech.map((tech) => (

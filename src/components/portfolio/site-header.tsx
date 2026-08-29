@@ -60,7 +60,7 @@ export function SiteHeader() {
           scrollTo("home")
         }}
         className="flex items-center gap-3"
-        aria-label="Maherukh Islam — back to top"
+        aria-label="Maherukh Islam, back to top"
       >
         <span
           aria-hidden="true"
@@ -118,7 +118,7 @@ export function SiteHeader() {
       {mobileMenu ? (
         <div className="fixed inset-0 z-40 flex flex-col items-center justify-center gap-10 bg-black/95 text-sm uppercase tracking-[0.3em] text-white backdrop-blur-xl md:hidden">
           <div className="absolute top-24 text-center" suppressHydrationWarning>
-            <p className="mb-2 text-[10px] tracking-[0.3em] text-white/40">TIME — DHAKA</p>
+            <p className="mb-2 text-[10px] tracking-[0.3em] text-white/60">DHAKA TIME</p>
             <h2 className="text-2xl font-semibold tracking-widest">{time}</h2>
           </div>
           {navLinks.map((link) => (

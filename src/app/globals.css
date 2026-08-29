@@ -6,7 +6,7 @@
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
+  --font-sans: var(--font-inter);
   --font-mono: var(--font-geist-mono);
   --color-sidebar-ring: var(--sidebar-ring);
   --color-sidebar-border: var(--sidebar-border);
@@ -151,7 +151,7 @@ html {
   color: #000;
 }
 
-/* Visible keyboard focus everywhere — accessibility first */
+/* Visible keyboard focus everywhere - accessibility first */
 :focus-visible {
   outline: 2px solid #fff;
   outline-offset: 3px;
@@ -294,13 +294,13 @@ html {
   will-change: transform, opacity;
 }
 
-/* Red-shifted copy — slice bursts near the end of each cycle */
+/* Red-shifted copy - slice bursts near the end of each cycle */
 .hero-glitch-a {
   filter: grayscale(1) brightness(1.15) sepia(1) hue-rotate(-45deg) saturate(8);
   animation: glitch-a 7s steps(1, end) infinite;
 }
 
-/* Cyan-shifted copy — bursts mid-cycle, offset from the red bursts */
+/* Cyan-shifted copy - bursts mid-cycle, offset from the red bursts */
 .hero-glitch-b {
   filter: grayscale(1) brightness(1.15) sepia(1) hue-rotate(140deg) saturate(7);
   animation: glitch-b 7s steps(1, end) infinite;
