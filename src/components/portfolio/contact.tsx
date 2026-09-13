@@ -1,6 +1,9 @@
 "use client"
 
 import { ArrowUpRight, Facebook, Github, Linkedin, Mail, MapPin } from "lucide-react"
+import { BackgroundBeams } from "@/components/ui/background-beams"
+import { HoverBorderGradient } from "@/components/ui/hover-border-gradient"
+import Magnet from "@/components/Magnet"
 import { profile, socials } from "./data"
 
 const socialIcons = {
@@ -34,8 +37,11 @@ export function Contact() {
       aria-labelledby="contact-heading"
       className="relative w-full overflow-hidden bg-black px-4 py-24 text-white sm:px-8 md:px-16 lg:px-24"
     >
-      {/* Grid + glow backdrop (from template) */}
+      {/* Grid + animated light beams + glow backdrop */}
       <div aria-hidden="true" className="bg-grid pointer-events-none absolute inset-0 opacity-[0.35]" />
+      <div aria-hidden="true" className="pointer-events-none absolute inset-0 opacity-40">
+        <BackgroundBeams className="bg-transparent" />
+      </div>
       <div aria-hidden="true" className="pointer-events-none absolute inset-0 overflow-hidden">
         <div className="absolute left-1/2 top-[-180px] h-[500px] w-[500px] -translate-x-1/2 rounded-full bg-white/10 opacity-20 blur-[140px]" />
         <div className="absolute bottom-[-220px] right-[-120px] h-[350px] w-[350px] rounded-full bg-white/5 blur-[120px]" />
@@ -73,15 +79,17 @@ export function Contact() {
                 const Icon = socialIcons[social.name as keyof typeof socialIcons]
                 return (
                   <li key={social.name}>
-                    <a
-                      href={social.url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      aria-label={`${social.name}: ${social.handle} (opens in new tab)`}
-                      className="flex h-14 w-14 items-center justify-center rounded-full border border-white/15 bg-white/5 text-white/60 backdrop-blur-md transition-all duration-300 hover:-translate-y-1 hover:border-white/40 hover:bg-white/10 hover:text-white hover:shadow-[0_0_30px_rgba(255,255,255,0.15)]"
-                    >
-                      <Icon className="h-5 w-5" aria-hidden="true" />
-                    </a>
+                    <Magnet padding={40} magnetStrength={4}>
+                      <a
+                        href={social.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label={`${social.name}: ${social.handle} (opens in new tab)`}
+                        className="flex h-14 w-14 items-center justify-center rounded-full border border-white/15 bg-white/5 text-white/60 backdrop-blur-md transition-all duration-300 hover:-translate-y-1 hover:border-white/40 hover:bg-white/10 hover:text-white hover:shadow-[0_0_30px_rgba(255,255,255,0.15)]"
+                      >
+                        <Icon className="h-5 w-5" aria-hidden="true" />
+                      </a>
+                    </Magnet>
                   </li>
                 )
               })}
@@ -116,13 +124,15 @@ export function Contact() {
                 study CS or software engineering, and building useful web tools
                 in Bangladesh along the way.
               </p>
-              <a
+              <HoverBorderGradient
+                as="a"
                 href={`mailto:${profile.email}`}
-                className="mt-6 inline-flex min-h-11 items-center gap-2 rounded-full bg-white px-6 py-3 text-xs font-bold uppercase tracking-[0.25em] text-black transition-all duration-300 hover:shadow-[0_0_30px_rgba(255,255,255,0.3)]"
+                containerClassName="mt-6 rounded-full"
+                className="flex min-h-11 items-center gap-2 bg-black px-6 py-3 text-xs font-bold uppercase tracking-[0.25em] text-white"
               >
                 Start a conversation
                 <ArrowUpRight size={16} aria-hidden="true" />
-              </a>
+              </HoverBorderGradient>
             </div>
           </div>
         </div>

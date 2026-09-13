@@ -46,11 +46,11 @@ export const techStack = [
   { name: "Vite", icon: "flame" as const },
 ]
 
-export const stats = [
-  { value: "5", label: "Live platforms shipped" },
-  { value: "1,000+", label: "Students served" },
-  { value: "12", label: "Certificates & awards" },
-  { value: "3", label: "Organizations moved online" },
+export const stats: { value: number; suffix?: string; label: string }[] = [
+  { value: 5, label: "Live platforms shipped" },
+  { value: 1000, suffix: "+", label: "Students served" },
+  { value: 12, label: "Certificates & awards" },
+  { value: 3, label: "Organizations moved online" },
 ]
 
 export const coreStack = [
@@ -350,13 +350,21 @@ export const leadership = [
   },
 ]
 
-export const education = [
+export const education: {
+  degree: string
+  school: string
+  period: string
+  subjects: string[]
+  current: boolean
+  next?: string
+}[] = [
   {
     degree: "HSC - Science Group",
     school: "Dhaka Commerce College",
     period: "2024-present · HSC 2026",
     subjects: ["Higher Mathematics", "Physics", "Chemistry", "ICT"],
     current: true,
+    next: "Planning to study CS or software engineering next",
   },
   {
     degree: "SSC - Science Division",

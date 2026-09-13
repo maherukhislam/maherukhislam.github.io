@@ -5,8 +5,18 @@ import { ExternalLink, Info } from "lucide-react"
 import { projects, recognitionAdditional, recognitionHighlights, type Project } from "./data"
 import ProjectModal from "./project-modal"
 import TechSphere from "./tech-sphere"
+import SpotlightCard from "@/components/SpotlightCard"
+import GlareHover from "@/components/GlareHover"
+import { InfiniteMovingCards } from "@/components/ui/infinite-moving-cards"
 
 type TabId = "projects" | "certificates" | "tech"
+
+/* Certificate highlights, formatted for the infinite marquee */
+const highlightMarquee = recognitionHighlights.map((item) => ({
+  quote: item.title,
+  name: item.org,
+  title: [item.note, item.date].filter(Boolean).join(" · "),
+}))
 
 const tabs: { id: TabId; label: string }[] = [
   { id: "projects", label: "Projects" },
@@ -41,7 +51,10 @@ function ProjectCard({
   onOpen: (p: Project) => void
 }) {
   return (
-    <article className="group relative flex h-full flex-col overflow-hidden rounded-2xl border border-white/15 bg-white/[0.06] backdrop-blur-xl transition-all duration-500 hover:-translate-y-2 hover:border-white/25 hover:shadow-2xl hover:shadow-white/10">
+    <SpotlightCard
+      spotlightColor="rgba(255, 255, 255, 0.14)"
+      className="group flex h-full flex-col rounded-2xl border border-white/15 bg-white/[0.06] backdrop-blur-xl transition-all duration-500 hover:-translate-y-2 hover:border-white/25 hover:shadow-2xl hover:shadow-white/10"
+    >
       {/* Top visual band with big index */}
       <div className="relative flex h-36 items-end overflow-hidden border-b border-white/10 bg-gradient-to-b from-white/[0.06] to-transparent p-5">
         <span
@@ -116,7 +129,7 @@ function ProjectCard({
           ) : null}
         </div>
       </div>
-    </article>
+    </SpotlightCard>
   )
 }
 
@@ -309,23 +322,12 @@ export function Showcase() {
                 <p className="mb-4 text-center font-mono text-[10px] uppercase tracking-[0.4em] text-white/60">
                   Highlights: most professionally relevant
                 </p>
-                <div className="grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-4">
-                  {recognitionHighlights.map((item, i) => (
-                    <div
-                      key={item.title}
-                      className="opacity-0"
-                      style={{ animation: `fadeSlideUp 0.5s ease ${i * 0.08}s forwards` }}
-                    >
-                      <CertCard
-                        title={item.title}
-                        org={item.orgNote ? `${item.org} - ${item.orgNote}` : item.org}
-                        note={item.note}
-                        date={item.date}
-                        highlight
-                      />
-                    </div>
-                  ))}
-                </div>
+                <InfiniteMovingCards
+                  items={highlightMarquee}
+                  direction="left"
+                  speed="slow"
+                  pauseOnHover
+                />
               </div>
               <div>
                 <p className="mb-4 text-center font-mono text-[10px] uppercase tracking-[0.4em] text-white/60">
@@ -338,12 +340,23 @@ export function Showcase() {
                       className="opacity-0"
                       style={{ animation: `fadeSlideUp 0.5s ease ${i * 0.05}s forwards` }}
                     >
-                      <CertCard
-                        title={item.title}
-                        org={item.org}
-                        note={item.note}
-                        date={item.date}
-                      />
+                      <GlareHover
+                        width="100%"
+                        height="100%"
+                        background="transparent"
+                        borderColor="transparent"
+                        borderRadius="1rem"
+                        glareOpacity={0.25}
+                        glareSize={220}
+                        className="h-full"
+                      >
+                        <CertCard
+                          title={item.title}
+                          org={item.org}
+                          note={item.note}
+                          date={item.date}
+                        />
+                      </GlareHover>
                     </div>
                   ))}
                 </div>

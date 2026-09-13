@@ -4,6 +4,7 @@ import { useEffect, useState } from "react"
 import Image from "next/image"
 import { ArrowUpRight } from "lucide-react"
 import { motion, useReducedMotion } from "framer-motion"
+import { Spotlight } from "@/components/ui/spotlight"
 
 const marqueeItems = [
   "WEB PLATFORMS",
@@ -32,17 +33,19 @@ export function Hero({ start = true }: { start?: boolean }) {
     // Start typing once the welcome screen is gone
     if (!start) return
     if (reduceMotion) {
-      setDisplayed(text)
-      return
+      const timer = setTimeout(() => setDisplayed(text), 300)
+      return () => clearTimeout(timer)
     }
-    setDisplayed("")
     let i = 0
     function type() {
       setDisplayed(text.slice(0, i + 1))
       i++
       if (i < text.length) setTimeout(type, 200)
     }
-    const startTimer = setTimeout(type, 300)
+    const startTimer = setTimeout(() => {
+      setDisplayed("")
+      type()
+    }, 300)
     return () => clearTimeout(startTimer)
   }, [start, reduceMotion])
 
@@ -83,6 +86,12 @@ export function Hero({ start = true }: { start?: boolean }) {
         {/* Scrims: darken top edge (under fixed header) + bottom edge (tagline/CTA row) */}
         <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-transparent to-black/85" />
       </div>
+
+      {/* Spotlight beam (Aceternity) - sweeps in behind the portrait on load */}
+      <Spotlight
+        className="-top-40 left-0 md:-top-20 md:left-60"
+        fill="white"
+      />
 
       <div className="relative z-10 flex h-full w-full flex-col justify-between px-6 pb-10 pt-24 md:px-12">
         {/* Giant typed name - click to cycle color mode */}

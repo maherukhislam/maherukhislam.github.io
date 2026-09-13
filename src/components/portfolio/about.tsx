@@ -3,7 +3,44 @@
 import { useRef, useState } from "react"
 import { AnimatePresence, motion, useInView, useReducedMotion } from "framer-motion"
 import { GraduationCap, MapPin, Sparkles } from "lucide-react"
+import Counter from "@/components/Counter"
 import { coreStack, profile, stats } from "./data"
+
+/* Stat number that counts up when scrolled into view (React Bits Counter) */
+function AnimatedStat({
+  value,
+  suffix,
+  label,
+}: {
+  value: number
+  suffix?: string
+  label: string
+}) {
+  const ref = useRef<HTMLDivElement>(null)
+  const inView = useInView(ref, { once: true, margin: "-60px" })
+  const reduceMotion = useReducedMotion()
+  const started = reduceMotion || inView
+
+  return (
+    <div ref={ref} className="bg-black/80 px-8 py-8 backdrop-blur">
+      <dd className="flex items-baseline font-black tracking-tight text-white">
+        <Counter
+          value={started ? value : 0}
+          fontSize={40}
+          gap={2}
+          fontWeight="inherit"
+          gradientHeight={0}
+          counterStyle={{ paddingLeft: 0, paddingRight: 0 }}
+        />
+        {suffix ? <span style={{ fontSize: 40 }}>{suffix}</span> : null}
+      </dd>
+      <dt className="mt-2 font-mono text-[10px] uppercase tracking-[0.2em] text-white/60">
+        {label}
+      </dt>
+    </div>
+  )
+}
+
 
 /* Typing "Available for work" ticker, from template */
 function AvailabilityTicker() {
@@ -241,14 +278,12 @@ export function About() {
           className="mt-20 grid grid-cols-2 gap-px overflow-hidden rounded-2xl border border-white/10 bg-white/10 lg:grid-cols-4"
         >
           {stats.map((stat) => (
-            <div key={stat.label} className="bg-black/80 px-8 py-8 backdrop-blur">
-              <dd className="text-4xl font-black tracking-tight text-white lg:text-5xl">
-                {stat.value}
-              </dd>
-              <dt className="mt-2 font-mono text-[10px] uppercase tracking-[0.2em] text-white/60">
-                {stat.label}
-              </dt>
-            </div>
+            <AnimatedStat
+              key={stat.label}
+              value={stat.value}
+              suffix={stat.suffix}
+              label={stat.label}
+            />
           ))}
         </motion.dl>
 

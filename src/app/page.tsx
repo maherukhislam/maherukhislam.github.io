@@ -1,7 +1,8 @@
 "use client"
 
 import { useState } from "react"
-import { AnimatePresence } from "framer-motion"
+import { AnimatePresence, useReducedMotion } from "framer-motion"
+import Noise from "@/components/Noise"
 import WelcomeScreen from "@/components/portfolio/welcome-screen"
 import { SiteHeader } from "@/components/portfolio/site-header"
 import { Hero, MarqueeBand } from "@/components/portfolio/hero"
@@ -12,6 +13,7 @@ import { Contact, SiteFooter } from "@/components/portfolio/contact"
 
 export default function Home() {
   const [showWelcome, setShowWelcome] = useState(true)
+  const reduceMotion = useReducedMotion()
 
   return (
     <div className="flex min-h-screen flex-col bg-black text-white">
@@ -38,6 +40,16 @@ export default function Home() {
       </main>
 
       <SiteFooter />
+
+      {/* Film-grain overlay (React Bits Noise) - subtle texture over everything */}
+      {!reduceMotion ? (
+        <div
+          aria-hidden="true"
+          className="pointer-events-none fixed inset-0 z-[500] opacity-70"
+        >
+          <Noise patternAlpha={6} patternRefreshInterval={4} />
+        </div>
+      ) : null}
     </div>
   )
 }
