@@ -249,6 +249,7 @@ export function Showcase() {
             </button>
           ))}
         </div>
+        </div>
 
         {/* Panels */}
         <div
@@ -327,7 +328,6 @@ export function Showcase() {
             <TechStackList />
           ) : null}
         </div>
-      </div>
       </div>
 
       </section>
