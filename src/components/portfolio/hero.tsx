@@ -1,6 +1,6 @@
-"use client"
+﻿"use client"
 
-import { useEffect, useState } from "react"
+import { useState } from "react"
 import Image from "next/image"
 import { ArrowUpRight } from "lucide-react"
 import { motion, useReducedMotion } from "framer-motion"
@@ -23,37 +23,15 @@ const colorModes = [
   "bg-gradient-to-b from-neutral-500 via-neutral-300 to-white text-transparent bg-clip-text",
 ]
 
-export function Hero({ start = true }: { start?: boolean }) {
-  const text = "MAHERUKH"
-  const [displayed, setDisplayed] = useState("")
+export function Hero() {
   const [colorMode, setColorMode] = useState(0)
   const reduceMotion = useReducedMotion()
-
-  useEffect(() => {
-    // Start typing once the welcome screen is gone
-    if (!start) return
-    if (reduceMotion) {
-      const timer = setTimeout(() => setDisplayed(text), 300)
-      return () => clearTimeout(timer)
-    }
-    let i = 0
-    function type() {
-      setDisplayed(text.slice(0, i + 1))
-      i++
-      if (i < text.length) setTimeout(type, 200)
-    }
-    const startTimer = setTimeout(() => {
-      setDisplayed("")
-      type()
-    }, 300)
-    return () => clearTimeout(startTimer)
-  }, [start, reduceMotion])
 
   return (
     <section
       id="home"
       aria-label="Introduction"
-      className="relative h-svh min-h-[640px] w-full overflow-hidden bg-black"
+      className="relative h-svh min-h-[640px] w-full overflow-hidden bg-surface"
     >
       {/* Backdrop visual: hero portrait (template's photo, restored) - RGB-split glitch
           layers + radial mask fading into the black page + gradient scrims for readability */}
@@ -94,29 +72,28 @@ export function Hero({ start = true }: { start?: boolean }) {
       />
 
       <div className="relative z-10 flex h-full w-full flex-col justify-between px-6 pb-10 pt-24 md:px-12">
-        {/* Giant typed name - click to cycle color mode */}
+        {/* Giant name in a mask that wipes up on load - click to cycle color mode */}
         <h1 className="w-fit">
-          <button
-            type="button"
-            onClick={() => setColorMode((prev) => (prev + 1) % colorModes.length)}
-            aria-label={`Maherukh. Activate to change the name color style (style ${colorMode + 1} of ${colorModes.length})`}
-            className={`font-display text-left text-[21vw] uppercase leading-[0.85] tracking-[-0.03em] transition-all duration-300 md:text-[15vw] lg:text-[13rem] ${
-              colorModes[colorMode]
-            }`}
-          >
-            {displayed || "\u00A0"}
-            {!reduceMotion && displayed.length < text.length ? (
-              <span
-                aria-hidden="true"
-                className="animate-cursor-blink ml-1 inline-block h-[0.7em] w-[0.08em] translate-y-[0.08em] bg-white/80"
-              />
-            ) : null}
-          </button>
+          <span className="block overflow-hidden py-[6px] -my-[6px]">
+            <motion.button
+              type="button"
+              onClick={() => setColorMode((prev) => (prev + 1) % colorModes.length)}
+              aria-label={`Maherukh. Activate to change the name color style (style ${colorMode + 1} of ${colorModes.length})`}
+              initial={reduceMotion ? {} : { y: "110%" }}
+              animate={reduceMotion ? {} : { y: 0 }}
+              transition={{ duration: 0.9, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
+              className={`block font-display text-left text-[21vw] uppercase leading-[0.85] tracking-[-0.03em] transition-colors duration-300 md:text-[15vw] lg:text-[13rem] ${
+                colorModes[colorMode]
+              }`}
+            >
+              MAHERUKH
+            </motion.button>
+          </span>
         </h1>
 
         {/* Statement */}
         <p
-          className="text-shine mt-4 max-w-md text-right text-3xl font-bold leading-[1.05] tracking-wide md:absolute md:right-12 md:top-28 md:mt-0 md:text-4xl lg:text-5xl"
+          className="mt-4 max-w-md text-right text-3xl font-bold leading-[1.05] tracking-tight text-white text-balance md:absolute md:right-12 md:top-28 md:mt-0 md:text-4xl lg:text-5xl"
         >
           Building
           <br />
@@ -129,7 +106,7 @@ export function Hero({ start = true }: { start?: boolean }) {
 
         {/* Bottom row */}
         <div className="mt-auto flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
-          <p className="text-shine max-w-md text-sm font-medium leading-relaxed tracking-wide sm:text-base lg:text-lg">
+          <p className="max-w-md text-sm font-medium leading-relaxed text-white/65 sm:text-base lg:text-lg">
             Science student in Dhaka, building the systems
             <br />
             <em className="not-italic text-white">
@@ -139,7 +116,7 @@ export function Hero({ start = true }: { start?: boolean }) {
 
           <a
             href="#showcase"
-            className="inline-flex w-fit items-center gap-3 rounded-full border border-white/20 px-6 py-3 text-xs font-semibold uppercase tracking-[0.25em] text-white transition-all duration-300 hover:bg-white hover:text-black"
+            className="inline-flex w-fit items-center gap-3 rounded-full border border-white/15 bg-white/[0.03] px-6 py-3 text-xs font-semibold uppercase tracking-[0.2em] text-white transition-colors duration-200 hover:border-signal hover:bg-signal/10 hover:text-signal"
           >
             View Showcase
             <ArrowUpRight size={16} aria-hidden="true" />
@@ -164,7 +141,7 @@ export function Hero({ start = true }: { start?: boolean }) {
 
 export function MarqueeBand() {
   return (
-    <div className="overflow-hidden border-y border-white/10 bg-black py-5">
+    <div className="overflow-hidden border-y border-line bg-surface-raised py-5">
       <div
         className="flex animate-marquee items-center gap-16 whitespace-nowrap"
         aria-hidden="true"
@@ -172,10 +149,10 @@ export function MarqueeBand() {
         {[...marqueeItems, ...marqueeItems, ...marqueeItems].map((item, i) => (
           <span
             key={i}
-            className="flex items-center gap-16 text-xs font-medium uppercase tracking-[0.3em] text-white/60"
+            className="flex items-center gap-16 text-xs font-medium tracking-[0.15em] text-white/45 uppercase"
           >
             {item}
-            <span className="text-white/20">✦</span>
+            <span className="text-white/20">âœ¦</span>
           </span>
         ))}
       </div>

@@ -4,44 +4,16 @@ import { useCallback, useRef, useState } from "react"
 import { ExternalLink, Info } from "lucide-react"
 import { projects, recognitionAdditional, recognitionHighlights, type Project } from "./data"
 import ProjectModal from "./project-modal"
-import TechSphere from "./tech-sphere"
-import SpotlightCard from "@/components/SpotlightCard"
-import GlareHover from "@/components/GlareHover"
-import { InfiniteMovingCards } from "@/components/ui/infinite-moving-cards"
+import { TechStackList } from "./tech-stack-list"
+import { SectionLabel } from "./section-label"
 
 type TabId = "projects" | "certificates" | "tech"
-
-/* Certificate highlights, formatted for the infinite marquee */
-const highlightMarquee = recognitionHighlights.map((item) => ({
-  quote: item.title,
-  name: item.org,
-  title: [item.note, item.date].filter(Boolean).join(" · "),
-}))
 
 const tabs: { id: TabId; label: string }[] = [
   { id: "projects", label: "Projects" },
   { id: "certificates", label: "Certificates" },
   { id: "tech", label: "Tech Stack" },
 ]
-
-/* Decorative label with animated lines (from template) */
-function SectionLabel({ text }: { text: string }) {
-  return (
-    <div className="mb-5 flex items-center justify-center gap-4">
-      <span className="relative overflow-hidden" aria-hidden="true">
-        <span className="block h-px w-10 bg-white/20" />
-        <span className="absolute inset-0 block animate-[lineMove_2s_linear_infinite] bg-gradient-to-r from-transparent via-white/80 to-transparent" />
-      </span>
-      <span className="font-mono text-[10px] uppercase tracking-[0.45em] text-white/60">
-        {text}
-      </span>
-      <span className="relative overflow-hidden" aria-hidden="true">
-        <span className="block h-px w-10 bg-white/20" />
-        <span className="absolute inset-0 block animate-[lineMove_2s_linear_infinite] bg-gradient-to-r from-transparent via-white/80 to-transparent" />
-      </span>
-    </div>
-  )
-}
 
 function ProjectCard({
   project,
@@ -51,37 +23,34 @@ function ProjectCard({
   onOpen: (p: Project) => void
 }) {
   return (
-    <SpotlightCard
-      spotlightColor="rgba(255, 255, 255, 0.14)"
-      className="group flex h-full flex-col rounded-2xl border border-white/15 bg-white/[0.06] backdrop-blur-xl transition-all duration-500 hover:-translate-y-2 hover:border-white/25 hover:shadow-2xl hover:shadow-white/10"
-    >
+    <div className="group flex h-full flex-col rounded-xl border border-line bg-surface-raised transition-colors duration-200 hover:border-white/20">
       {/* Top visual band with big index */}
-      <div className="relative flex h-36 items-end overflow-hidden border-b border-white/10 bg-gradient-to-b from-white/[0.06] to-transparent p-5">
+      <div className="relative flex h-36 items-end overflow-hidden border-b border-line p-5">
         <span
           aria-hidden="true"
-          className="pointer-events-none absolute -right-3 -top-8 select-none font-display text-[7rem] leading-none text-white/[0.06] transition-colors duration-500 group-hover:text-white/[0.12]"
+          className="pointer-events-none absolute -right-3 -top-8 select-none font-display text-[7rem] leading-none text-white/[0.04]"
         >
           {project.index}
         </span>
         <div>
-          <p className="font-mono text-[10px] uppercase tracking-[0.25em] text-white/60">
+          <p className="font-mono text-[10px] uppercase tracking-[0.2em] text-white/45">
             {project.category}
           </p>
-          <h3 className="mt-1.5 text-xl font-bold leading-tight tracking-tight text-white">
+          <h3 className="mt-1.5 text-xl font-semibold leading-tight tracking-tight text-white">
             {project.title}
           </h3>
         </div>
         <span
           className={`absolute right-4 top-4 inline-flex items-center gap-1.5 rounded-full border px-2.5 py-1 text-[10px] font-medium ${
             project.status === "Open Source"
-              ? "border-white/25 bg-white/10 text-white/80"
-              : "border-green-400/30 bg-green-400/10 text-green-300"
+              ? "border-white/15 bg-white/5 text-white/60"
+              : "border-signal/30 bg-signal/10 text-signal"
           }`}
         >
           {project.status === "Live" ? (
             <span
               aria-hidden="true"
-              className="animate-pulse-dot h-1.5 w-1.5 rounded-full bg-green-400"
+              className="h-1.5 w-1.5 rounded-full bg-signal"
             />
           ) : null}
           {project.status}
@@ -89,19 +58,19 @@ function ProjectCard({
       </div>
 
       <div className="flex flex-1 flex-col p-5">
-        <p className="text-sm leading-relaxed text-white/60">{project.short}</p>
+        <p className="text-sm leading-relaxed text-white/55">{project.short}</p>
 
         <ul className="mt-4 flex flex-wrap gap-2">
           {project.tech.slice(0, 4).map((tech) => (
             <li
               key={tech}
-              className="rounded-full border border-white/10 bg-black/40 px-2.5 py-1 font-mono text-[10px] text-white/50"
+              className="rounded-md border border-line bg-surface px-2.5 py-1 font-mono text-[10px] text-white/45"
             >
               {tech}
             </li>
           ))}
           {project.tech.length > 4 ? (
-            <li className="rounded-full border border-white/10 bg-black/40 px-2.5 py-1 font-mono text-[10px] text-white/60">
+            <li className="rounded-md border border-line bg-surface px-2.5 py-1 font-mono text-[10px] text-white/55">
               +{project.tech.length - 4}
             </li>
           ) : null}
@@ -111,7 +80,7 @@ function ProjectCard({
           <button
             type="button"
             onClick={() => onOpen(project)}
-            className="inline-flex min-h-11 items-center gap-2 rounded-full border border-white/20 px-4 py-2 text-xs font-semibold uppercase tracking-[0.2em] text-white/80 transition-all duration-300 hover:bg-white hover:text-black"
+            className="inline-flex min-h-11 items-center gap-2 rounded-full border border-line px-4 py-2 text-xs font-semibold tracking-[0.1em] text-white/80 uppercase transition-colors duration-200 hover:border-signal/50 hover:bg-signal/10 hover:text-signal"
           >
             <Info className="h-3.5 w-3.5" aria-hidden="true" />
             Details
@@ -122,14 +91,14 @@ function ProjectCard({
               target="_blank"
               rel="noopener noreferrer"
               aria-label={`Visit ${project.urlLabel ?? project.title} (opens in new tab)`}
-              className="flex h-11 w-11 items-center justify-center rounded-full border border-white/15 bg-white/5 text-white/60 transition-all duration-200 hover:bg-white/10 hover:text-white hover:border-white/30 active:scale-95"
+              className="flex h-11 w-11 items-center justify-center rounded-full border border-line text-white/50 transition-colors duration-200 hover:border-signal/40 hover:text-signal"
             >
               <ExternalLink className="h-4 w-4" aria-hidden="true" />
             </a>
           ) : null}
         </div>
       </div>
-    </SpotlightCard>
+    </div>
   )
 }
 
@@ -148,10 +117,10 @@ function CertCard({
 }) {
   return (
     <div
-      className={`group relative h-full overflow-hidden rounded-2xl border p-5 backdrop-blur-xl transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl hover:shadow-white/10 ${
+      className={`flex h-full flex-col rounded-xl border p-5 transition-colors duration-200 ${
         highlight
-          ? "border-white/20 bg-white/[0.07] hover:border-white/35"
-          : "border-white/10 bg-white/[0.04] hover:border-white/20"
+          ? "border-white/15 bg-surface-raised hover:border-white/25"
+          : "border-line bg-surface-raised hover:border-white/15"
       }`}
     >
       <div className="flex items-start justify-between gap-3">
@@ -160,8 +129,8 @@ function CertCard({
           <span
             className={`shrink-0 rounded-full border px-2.5 py-0.5 text-[10px] font-medium ${
               highlight
-                ? "border-white/30 bg-white/10 text-white/80"
-                : "border-white/15 bg-white/[0.05] text-white/50"
+                ? "border-signal/30 bg-signal/10 text-signal"
+                : "border-line text-white/45"
             }`}
           >
             {note}
@@ -225,45 +194,34 @@ export function Showcase() {
     <section
       id="showcase"
       aria-labelledby="showcase-heading"
-      className="relative min-h-[85vh] w-full overflow-hidden bg-black px-4 py-24 text-white sm:px-8 md:px-16 lg:px-24"
+      className="relative w-full overflow-hidden border-t border-line bg-surface px-6 py-24 text-white md:px-10"
     >
-      {/* Backdrop glow */}
-      <div
-        aria-hidden="true"
-        className="pointer-events-none absolute left-1/2 top-0 h-[400px] w-[600px] -translate-x-1/2 rounded-full bg-white/[0.03] blur-[140px]"
-      />
-
-      <div className="relative z-10 mx-auto flex max-w-6xl flex-col items-center">
+      <div className="relative z-10 mx-auto w-full max-w-6xl">
         <SectionLabel text="Showcase" />
         <span id="showcase-heading" className="sr-only">
           Portfolio showcase: projects, certificates, and tech stack
         </span>
 
-        <h2
-          className="mb-12 text-center font-black leading-none tracking-tight text-white drop-shadow-[0_0_25px_rgba(255,255,255,0.15)]"
-          style={{ fontSize: "clamp(32px,6vw,80px)" }}
-        >
-          <span className="inline-block bg-gradient-to-b from-white via-white to-white/45 bg-clip-text text-transparent">
+        <div className="mb-12 flex flex-col gap-8 md:flex-row md:items-end md:justify-between">
+          <h2 className="max-w-2xl text-[clamp(36px,6vw,72px)] font-semibold leading-[0.95] tracking-tight text-balance">
             Portfolio Showcase
-          </span>
-        </h2>
+          </h2>
 
-        {/* Tab switcher */}
-        <div
-          role="tablist"
-          aria-label="Showcase categories"
-          className="relative mb-14 flex w-full max-w-md items-center rounded-full border border-white/20 bg-white/[0.08] p-1.5 shadow-2xl shadow-black/40 backdrop-blur-xl"
-        >
+          {/* Tab switcher */}
           <div
-            aria-hidden="true"
-            className="absolute bottom-1.5 top-1.5 rounded-full border border-white/40 bg-white/20 shadow-xl shadow-white/10 transition-[left] duration-300 ease-out"
-            style={{
-              width: "calc(33.333% - 4px)",
-              left: activePillLeft,
-              backdropFilter: "blur(15px)",
-            }}
-          />
-          {tabs.map((tab, i) => (
+            role="tablist"
+            aria-label="Showcase categories"
+            className="relative flex w-full items-center rounded-full border border-line bg-surface-raised p-1.5 md:w-auto md:min-w-md"
+          >
+            <div
+              aria-hidden="true"
+              className="absolute bottom-1.5 top-1.5 rounded-full bg-white/10 transition-[left] duration-300 ease-out"
+              style={{
+                width: "calc(33.333% - 4px)",
+                left: activePillLeft,
+              }}
+            />
+            {tabs.map((tab, i) => (
             <button
               key={tab.id}
               ref={(el) => {
@@ -317,46 +275,46 @@ export function Showcase() {
           ) : null}
 
           {active === "certificates" ? (
-            <div className="space-y-8">
+            <div className="space-y-10">
               <div>
-                <p className="mb-4 text-center font-mono text-[10px] uppercase tracking-[0.4em] text-white/60">
+                <p className="mb-5 font-mono text-[11px] uppercase tracking-[0.2em] text-white/50">
                   Highlights: most professionally relevant
                 </p>
-                <InfiniteMovingCards
-                  items={highlightMarquee}
-                  direction="left"
-                  speed="slow"
-                  pauseOnHover
-                />
+                <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
+                  {recognitionHighlights.map((item, i) => (
+                    <div
+                      key={item.title}
+                      className="opacity-0"
+                      style={{ animation: `fadeSlideUp 0.5s ease ${i * 0.05}s forwards` }}
+                    >
+                      <CertCard
+                        title={item.title}
+                        org={item.org}
+                        note={item.note}
+                        date={item.date}
+                        highlight
+                      />
+                    </div>
+                  ))}
+                </div>
               </div>
               <div>
-                <p className="mb-4 text-center font-mono text-[10px] uppercase tracking-[0.4em] text-white/60">
+                <p className="mb-5 font-mono text-[11px] uppercase tracking-[0.2em] text-white/50">
                   Additional certificates &amp; achievements
                 </p>
-                <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
+                <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
                   {recognitionAdditional.map((item, i) => (
                     <div
                       key={item.title}
                       className="opacity-0"
                       style={{ animation: `fadeSlideUp 0.5s ease ${i * 0.05}s forwards` }}
                     >
-                      <GlareHover
-                        width="100%"
-                        height="100%"
-                        background="transparent"
-                        borderColor="transparent"
-                        borderRadius="1rem"
-                        glareOpacity={0.25}
-                        glareSize={220}
-                        className="h-full"
-                      >
-                        <CertCard
-                          title={item.title}
-                          org={item.org}
-                          note={item.note}
-                          date={item.date}
-                        />
-                      </GlareHover>
+                      <CertCard
+                        title={item.title}
+                        org={item.org}
+                        note={item.note}
+                        date={item.date}
+                      />
                     </div>
                   ))}
                 </div>
@@ -365,11 +323,10 @@ export function Showcase() {
           ) : null}
 
           {active === "tech" ? (
-            <div className="animate-[fadeSlideUp_0.5s_ease_forwards]">
-              <TechSphere />
-            </div>
+            <TechStackList />
           ) : null}
         </div>
+      </div>
       </div>
 
       <ProjectModal project={selected} onClose={() => setSelected(null)} />

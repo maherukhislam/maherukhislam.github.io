@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Anton, Geist_Mono, Inter } from "next/font/google";
+import { Anton, Geist_Mono, Instrument_Sans } from "next/font/google";
 import "./globals.css";
 
 const anton = Anton({
@@ -8,8 +8,8 @@ const anton = Anton({
   weight: "400",
 });
 
-const inter = Inter({
-  variable: "--font-inter",
+const instrumentSans = Instrument_Sans({
+  variable: "--font-body",
   subsets: ["latin"],
 });
 
@@ -59,7 +59,7 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: "#000000",
+  themeColor: "#0a0a0c",
 };
 
 export default function RootLayout({
@@ -70,7 +70,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body
-        className={`${anton.variable} ${inter.variable} ${geistMono.variable} font-sans antialiased bg-black text-white`}
+        className={`${anton.variable} ${instrumentSans.variable} ${geistMono.variable} font-sans antialiased bg-surface text-white`}
       >
         {children}
       </body>

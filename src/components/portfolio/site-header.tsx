@@ -58,7 +58,7 @@ export function SiteHeader() {
   const [mobileMenu, setMobileMenu] = useState(false)
 
   useEffect(() => {
-    const interval = setInterval(() => setTime(formatDhakaTime()), 1000)
+    const interval = setInterval(() => setTime(formatDhakaTime()), 60_000)
     return () => clearInterval(interval)
   }, [])
 
@@ -74,17 +74,17 @@ export function SiteHeader() {
   }, [mobileMenu])
 
   return (
-    <Navbar className="px-4">
-      {/* Desktop: floating pill navbar that shrinks + blurs once the page scrolls */}
-      <NavBody className="justify-between border border-white/10 bg-black/40 backdrop-blur-xl">
+    <Navbar className="px-6">
+      {/* Desktop: floating pill navbar that blurs once the page scrolls */}
+      <NavBody className="justify-between border border-line bg-surface/80 backdrop-blur-xl">
         <Logo />
         <NavItems
           items={navItems}
-          className="text-xs uppercase tracking-widest"
+          className="text-xs tracking-wide"
         />
         <div className="relative z-20 flex items-center gap-6">
           <div
-            className="hidden text-[10px] uppercase tracking-[0.3em] text-white/70 xl:block"
+            className="hidden font-mono text-[10px] tabular-nums text-white/60 xl:block"
             aria-label={`Local time in Dhaka: ${time}`}
             suppressHydrationWarning
           >
@@ -92,7 +92,7 @@ export function SiteHeader() {
           </div>
           <a
             href="#contact"
-            className="rounded-full bg-white px-4 py-2 text-[10px] font-bold uppercase tracking-[0.2em] text-black transition-all duration-300 hover:shadow-[0_0_30px_rgba(255,255,255,0.35)]"
+            className="rounded-full border border-signal/40 bg-signal/10 px-4 py-2 text-[10px] font-bold uppercase tracking-[0.15em] text-signal transition-colors duration-200 hover:bg-signal hover:text-black"
           >
             Let&apos;s talk
           </a>
@@ -100,7 +100,7 @@ export function SiteHeader() {
       </NavBody>
 
       {/* Mobile / tablet: floating bar with dropdown menu */}
-      <MobileNav className="border border-white/10 bg-black/40 backdrop-blur-xl">
+      <MobileNav className="border border-line bg-surface/80 backdrop-blur-xl">
         <MobileNavHeader>
           <Logo />
           <MobileNavToggle
@@ -111,10 +111,10 @@ export function SiteHeader() {
         <MobileNavMenu
           isOpen={mobileMenu}
           onClose={() => setMobileMenu(false)}
-          className="border border-white/10 bg-black/95 shadow-none backdrop-blur-xl"
+          className="border border-line bg-surface shadow-none backdrop-blur-xl"
         >
           <div
-            className="absolute right-6 top-6 text-[10px] uppercase tracking-[0.3em] text-white/60"
+            className="absolute right-6 top-6 font-mono text-[10px] tabular-nums text-white/60"
             suppressHydrationWarning
           >
             Dhaka {time}
@@ -124,7 +124,7 @@ export function SiteHeader() {
               key={link.id}
               href={`#${link.id}`}
               onClick={() => setMobileMenu(false)}
-              className="text-sm uppercase tracking-[0.3em] text-white/80 transition-colors hover:text-white"
+              className="text-sm tracking-wide text-white/80 transition-colors hover:text-signal"
             >
               {link.label}
             </a>
@@ -132,7 +132,7 @@ export function SiteHeader() {
           <a
             href="#contact"
             onClick={() => setMobileMenu(false)}
-            className="mt-4 rounded-full bg-white px-5 py-2.5 text-[10px] font-bold uppercase tracking-[0.2em] text-black"
+            className="mt-4 w-fit rounded-full bg-signal px-5 py-2.5 text-[10px] font-bold uppercase tracking-[0.15em] text-black"
           >
             Let&apos;s talk
           </a>

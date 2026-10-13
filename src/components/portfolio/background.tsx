@@ -10,21 +10,7 @@ import {
 } from "lucide-react"
 import { education, interests, leadership } from "./data"
 import { Timeline } from "@/components/ui/timeline"
-
-/* Decorative label with animated lines (shared pattern from showcase/contact) */
-function SectionLabel({ text }: { text: string }) {
-  return (
-    <div className="flex items-center gap-4">
-      <span className="relative overflow-hidden" aria-hidden="true">
-        <span className="block h-px w-10 bg-white/20" />
-        <span className="absolute inset-0 block animate-[lineMove_2s_linear_infinite] bg-gradient-to-r from-transparent via-white/80 to-transparent" />
-      </span>
-      <span className="font-mono text-[10px] uppercase tracking-[0.45em] text-white/60">
-        {text}
-      </span>
-    </div>
-  )
-}
+import { SectionLabel } from "./section-label"
 
 export function Background() {
   const reduceMotion = useReducedMotion()
@@ -43,21 +29,17 @@ export function Background() {
     <section
       id="background"
       aria-labelledby="background-heading"
-      className="relative w-full overflow-hidden bg-black px-6 py-28 text-white md:px-20"
+      className="relative w-full overflow-hidden border-t border-line bg-surface px-6 py-24 text-white md:px-10"
     >
       {/* Backdrop */}
-      <div aria-hidden="true" className="bg-grid pointer-events-none absolute inset-0 opacity-30" />
-      <div
-        aria-hidden="true"
-        className="pointer-events-none absolute -left-40 bottom-0 h-[400px] w-[400px] rounded-full bg-white/[0.04] blur-[120px]"
-      />
+      <div aria-hidden="true" className="bg-grid pointer-events-none absolute inset-0 opacity-25" />
 
-      <div className="relative z-10 mx-auto max-w-6xl">
+      <div className="relative z-10 mx-auto w-full max-w-6xl">
         <SectionLabel text="Background" />
 
         <h2
           id="background-heading"
-          className="mt-6 text-[clamp(40px,6vw,80px)] font-extrabold leading-[1.05] tracking-tight"
+          className="mt-6 max-w-3xl text-[clamp(36px,6vw,72px)] font-semibold leading-[1.0] tracking-tight text-balance"
         >
           <motion.span {...reveal(0)} className="block text-white">
             Education &amp; Leadership.
@@ -76,16 +58,16 @@ export function Background() {
                     {education.map((item) => (
                       <li
                         key={item.degree}
-                        className={`rounded-2xl border p-6 ${
+                        className={`rounded-xl border p-6 ${
                           item.current
-                            ? "border-white/25 bg-white/[0.05]"
-                            : "border-white/10 bg-white/[0.03]"
+                            ? "border-white/15 bg-surface-raised"
+                            : "border-line bg-surface-raised"
                         }`}
                       >
                         <div className="flex flex-wrap items-center justify-between gap-2">
                           <h4 className="text-base font-semibold text-white">{item.degree}</h4>
                           {item.current ? (
-                            <span className="rounded-full border border-white/25 bg-white/10 px-2.5 py-0.5 font-mono text-[9px] uppercase tracking-widest text-white/70">
+                            <span className="rounded-full border border-signal/30 bg-signal/10 px-2.5 py-0.5 font-mono text-[9px] tracking-[0.15em] text-signal uppercase">
                               Current
                             </span>
                           ) : null}
@@ -108,7 +90,7 @@ export function Background() {
                             {item.subjects.map((subject) => (
                               <li
                                 key={subject}
-                                className="rounded-full border border-white/10 bg-white/[0.04] px-3 py-1 text-xs text-white/60"
+                                className="rounded-md border border-line px-3 py-1 text-xs text-white/60"
                               >
                                 {subject}
                               </li>
@@ -136,26 +118,26 @@ export function Background() {
                       return (
                         <li
                           key={item.role}
-                          className={`rounded-2xl border p-6 transition-colors hover:border-white/20 ${
+                          className={`rounded-xl border p-6 transition-colors hover:border-white/20 ${
                             i === 0
-                              ? "border-white/25 bg-white/[0.05]"
-                              : "border-white/10 bg-white/[0.03]"
+                              ? "border-white/15 bg-surface-raised"
+                              : "border-line bg-surface-raised"
                           }`}
                         >
                           <div className="flex items-center justify-between">
-                            <span className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-white/10 bg-white/5 text-white/70">
+                            <span className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-line bg-surface text-white/70">
                               <Icon className="h-4 w-4" aria-hidden="true" />
                             </span>
-                            <span className="font-mono text-xs text-white/60">{item.period}</span>
+                            <span className="font-mono text-xs text-white/55">{item.period}</span>
                           </div>
                           <h4 className="mt-3 text-base font-semibold text-white">{item.role}</h4>
-                          <p className="mt-0.5 text-sm text-white/60">
+                          <p className="mt-0.5 text-sm text-white/55">
                             {item.org}
                             {item.orgNote ? (
-                              <span className="text-white/60"> · {item.orgNote}</span>
+                              <span className="text-white/55"> · {item.orgNote}</span>
                             ) : null}
                           </p>
-                          <p className="mt-2 text-sm leading-relaxed text-white/50">{item.desc}</p>
+                          <p className="mt-2 text-sm leading-relaxed text-white/45">{item.desc}</p>
                         </li>
                       )
                     })}
@@ -165,12 +147,12 @@ export function Background() {
               {
                 title: "Currently Learning",
                 content: (
-                  <div className="rounded-2xl border border-white/10 bg-white/[0.03] px-6 py-5">
+                  <div className="rounded-xl border border-line bg-surface-raised px-6 py-5">
                     <ul className="flex flex-wrap gap-2">
                       {interests.map((item) => (
                         <li
                           key={item}
-                          className="rounded-full border border-white/15 bg-white/[0.05] px-3.5 py-1.5 text-sm text-white/70 transition-colors hover:border-white/40 hover:text-white"
+                          className="rounded-md border border-line px-3.5 py-1.5 text-sm text-white/70 transition-colors duration-200 hover:border-signal/40 hover:text-white"
                         >
                           {item}
                         </li>
