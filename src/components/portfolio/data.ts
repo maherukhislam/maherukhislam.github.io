@@ -3,7 +3,7 @@ export const profile = {
   role: "Junior Web Developer",
   secondaryRole: "Student Developer",
   tagline:
-    "Student developer in Dhaka. Four live platforms for three organizations, plus an open-source PostgreSQL security tool.",
+    "Junior web developer in Dhaka. I build and maintain web platforms for local organizations.",
   location: "Dhaka, Bangladesh",
   email: "maherukhislam2007@gmail.com",
   availability: "Open for select web & product work",
@@ -97,7 +97,7 @@ export const projects: Project[] = [
     index: "01",
     title: "DCC Nature Study Club Website",
     short:
-      "The club's first website, ever. 1,000+ members now get event news, a student-written blog, and online membership registration in one place.",
+      "DCC Nature Study Club had more than 1,000 members and no website. I built its first one, with club news, student writing, and online membership registration.",
     url: "https://dccnsc.org",
     urlLabel: "dccnsc.org",
     category: "Web Platform · Full-Stack",
@@ -105,11 +105,11 @@ export const projects: Project[] = [
     role: "Full-Stack Developer",
     status: "Live",
     problem:
-      "A 1,000+ member club with no website at all. News went out on paper and scattered Facebook posts; joining meant filling in a form by hand.",
+      "The club had more than 1,000 members, but no website. News was posted on paper and across Facebook, and joining meant filling out a paper form.",
     solution:
       "I designed and built the official site myself: events, a blog where students publish their own writing, a photo gallery, club achievements, the committee directory, and online membership registration.",
     impact:
-      "Members now join online in minutes instead of handing in paper forms, and the committee finally has one link to point people to.",
+      "Members can register online, and the committee has one link to share for club news and activities.",
     tech: ["React 18", "TypeScript", "Cloudflare Pages", "Supabase", "CSS Modules"],
     modules: [
       { name: "Events", purpose: "Activity reports and upcoming programs" },
@@ -126,7 +126,7 @@ export const projects: Project[] = [
     index: "02",
     title: "Financial Management System",
     short:
-      "As the club treasurer, I built the portal I use to manage its finances, with role-based access, signed receipts, and an audit trail.",
+      "I built the club's finance portal and use it as treasurer. It keeps receipts and finance records together, with access based on each member's role.",
     url: "https://finance.dccnsc.org",
     urlLabel: "finance.dccnsc.org",
     category: "Internal Tool / Infrastructure",
@@ -134,11 +134,11 @@ export const projects: Project[] = [
     role: "Developer & Executive Treasurer",
     status: "Live",
     problem:
-      "Club money was tracked in paper logs and whatever spreadsheets were lying around. Every audit meant days of checking by hand, and mistakes slipped through.",
+      "Club finances lived in paper logs and spreadsheets. Reviewing the records meant checking them by hand.",
     solution:
-      "A login-gated portal built on React 19 + Zustand and a Supabase backend. Each member sees only what their role allows, receipts are signed, and every action gets logged.",
+      "I built a login-only portal with React 19, Zustand, and Supabase. Members see the records their role allows, receipts are signed, and finance actions are logged.",
     impact:
-      "Finance records are centralized and actions are traceable, making reviews and handover easier than paper logs and scattered spreadsheets.",
+      "Finance records now live in one place, with a log that shows what changed and when.",
     tech: ["React 19", "Zustand", "Cloudflare Workers", "Supabase", "PostgreSQL"],
     modules: [
       { name: "Transactions / Finance", purpose: "Track club money, dues, and payments" },
@@ -168,16 +168,16 @@ export const projects: Project[] = [
     index: "03",
     title: "A2 Abroad - Study-Abroad Consultancy Portal",
     short:
-      "A Dhaka study-abroad consultancy ran its whole student pipeline on phone calls and paper. I built the portal that moved it online, with separate dashboards for students, consultants, and admins.",
+      "I built a portal for A2 Abroad's student applications. Students, consultants, and administrators each have a view for their part of the process.",
     category: "Client Project · Full-Stack Web Portal",
     role: "Full-Stack Developer",
     status: "Live",
     problem:
-      "A2 Abroad places students in the UK, New Zealand, Malaysia, South Korea, and Hungary. Until this portal, every inquiry, document, and counseling session was tracked by hand.",
+      "A2 Abroad helps students apply to programs in the UK, New Zealand, Malaysia, South Korea, and Hungary. Staff tracked inquiries, documents, and counseling by hand.",
     solution:
-      "One portal, three views. Students sign up, upload their details, and track their own progress. Consultants see only their assigned students. Admins record expenses, pull reports, and watch the whole pipeline.",
+      "Students can register, submit their details, and check their progress. Consultants see their assigned students, while administrators handle expenses and reports.",
     impact:
-      "Students now apply and follow their own progress in the portal instead of chasing updates over the phone, and the staff finally has one place where everything is visible.",
+      "Students can check application progress in the portal, and staff can follow the same process from one place.",
     tech: ["React", "TypeScript"],
   },
   {
@@ -185,7 +185,7 @@ export const projects: Project[] = [
     index: "04",
     title: "Postgres Auth Security Review",
     short:
-      "Auth code tends to ship with the same known holes: RLS gaps, weak hashing, leaked secrets. This open-source skill makes AI coding agents catch them in PostgreSQL and Supabase code before they ship. MIT, v1.4.0.",
+      "An open-source skill that helps AI coding agents find common PostgreSQL and Supabase auth problems, including weak password hashing, RLS gaps, and exposed secrets. MIT, v1.4.0.",
     category: "Open-Source Tool · Agent Skill",
     role: "Creator & Maintainer",
     status: "Open Source",
@@ -194,9 +194,9 @@ export const projects: Project[] = [
     problem:
       "The same auth bugs show up in database code again and again: RLS gaps, weak hashing, secrets committed to the repo. Most teams catch them after deployment, if at all.",
     solution:
-      "An open-source skill for AI coding agents like Claude Code, Cursor, and GitHub Copilot. Install it once and it wakes up whenever the agent touches a login flow, JWT session, SQL migration, or RLS policy, checking the code against a researched list of known vulnerabilities and fixing problems inline.",
+      "The skill checks login flows, JWT sessions, SQL migrations, and RLS policies as an AI coding agent works. It also includes a Bash scanner that teams can run on its own.",
     impact:
-      "The checks come from named CVEs (including CVE-2025-1094) and published OWASP and NIST standards. It also ships a standalone bash scanner with no network calls, so teams can wire it straight into CI.",
+      "Its checks include CVE-2025-1094 and guidance from OWASP and NIST. The standalone scanner makes no network calls and can run in CI.",
     tech: ["PostgreSQL", "Supabase", "RLS Policies", "Bash / CI", "AI Agent Tooling"],
     coverage: [
       { area: "Row-Level Security", checks: "USING(true) trap, table-owner bypass, missing FORCE RLS" },
@@ -214,16 +214,16 @@ export const projects: Project[] = [
     index: "05",
     title: "A2 English Academy - Financial Management System",
     short:
-      "An IELTS coaching center in Dhaka ran on paper cashbooks. I built them one portal for fees, installments, expenses, and reports, gated by role.",
+      "I built a finance portal for an IELTS academy to track fees, installments, expenses, and reports, with access set by staff role.",
     category: "Client Project · Internal Financial System",
     role: "Full-Stack Developer",
     status: "Live",
     problem:
-      "A2 English Academy prepares students for IELTS and study abroad. Fees, installments, and expenses all lived in paper cashbooks and the occasional spreadsheet.",
+      "A2 English Academy prepares students for IELTS and study abroad. Staff tracked fees, installments, and expenses in cashbooks and spreadsheets.",
     solution:
-      "One portal now holds all of it: who paid, who owes the next installment, what was spent, and a report at the end of the month. Staff only see the financial records their role allows.",
+      "The portal records payments, upcoming installments, expenses, and monthly reports. Staff can see records allowed by their role.",
     impact:
-      "The owners can check exactly where the money stands on any given day, without waiting for someone to balance the cashbook first.",
+      "The owners can check the academy's recorded income and expenses without waiting for a manual cashbook review.",
     tech: ["React", "TypeScript"],
   },
 ]
@@ -350,7 +350,7 @@ export const experience = [
     period: "Sep 2026–present",
     location: "Mirpur, Dhaka, Bangladesh",
     arrangement: "Contract · Hybrid",
-    desc: "Support web development for A2 Abroad and A2 English Academy by building and maintaining the platforms behind their student-facing services, from feature implementation to troubleshooting. Continuing the work started on the academy’s student portal as a formal engagement.",
+    desc: "I work on the websites and tools students use at A2 Abroad and A2 English Academy. I build features, fix issues, and help keep the platforms running. I first worked on the academy’s student portal as a project; now I’m continuing that work in a contract role.",
   },
 ]
 

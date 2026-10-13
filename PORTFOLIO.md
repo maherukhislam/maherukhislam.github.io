@@ -1,16 +1,14 @@
 # Md. Maherukh Islam
 
-**Junior Web Developer · Student Developer**
-Dhaka, Bangladesh · [maherukhislam2007@gmail.com](mailto:maherukhislam2007@gmail.com)  
-Contract · Hybrid · Mirpur, Dhaka, Bangladesh.
-
-Student developer in Dhaka. I’ve built four live web platforms for three organizations and an open-source PostgreSQL security tool.
+**Junior Web Developer | Student Developer**
+Dhaka, Bangladesh | [maherukhislam2007@gmail.com](mailto:maherukhislam2007@gmail.com)
+Contract, hybrid | Mirpur, Dhaka, Bangladesh
 
 ## About
 
-I’m a science student in Dhaka. Since 2024, I’ve built four live web platforms for three organizations and an open-source PostgreSQL security tool. My work includes a website for a 1,000+ member club, two finance systems, and a study-abroad consultancy portal.
+I’m a science student in Dhaka, and I’ve been building web platforms since 2024. Four are live across three organizations. One is the first website for DCC Nature Study Club, which has more than 1,000 members. I also made an open-source tool for checking PostgreSQL authentication code.
 
-These are systems built for real organizations. I focus on accessible interfaces, careful data access, and software that is practical to maintain.
+I like work that solves a clear problem for the people using it. I care about accessible interfaces and software that is practical to maintain.
 
 ## At a glance
 
@@ -21,12 +19,11 @@ These are systems built for real organizations. I focus on accessible interfaces
 
 ## Experience
 
-### Junior Web Developer — A2 Abroad & A2 English Academy
+### Junior Web Developer | A2 Abroad & A2 English Academy
 
-**Contract · Hybrid · Mirpur, Dhaka, Bangladesh · Sep 2026–present**
+**Contract | Hybrid | Sep 2026-present | Mirpur, Dhaka, Bangladesh**
 
-Support web development for A2 Abroad and A2 English Academy by building and maintaining the platforms behind their student-facing services, from feature implementation to troubleshooting. This formal engagement continues the work started on the academy’s student portal.
-
+I work on the websites and tools students use at A2 Abroad and A2 English Academy. I build features, fix issues, and help keep the platforms running. I first worked on the academy’s student portal as a project; now I’m continuing that work in a contract role.
 ## Projects
 
 ### DCC Nature Study Club Website

@@ -184,10 +184,10 @@ export function About() {
 
         <h2 className="max-w-4xl text-[clamp(48px,8vw,104px)] font-semibold leading-[1.02] tracking-tight text-balance">
           <motion.span {...anim(0)} className="block text-white">
-            Creative Web
+            Junior Web
           </motion.span>
           <motion.span {...anim(0.25)} className="block text-white/45">
-            Builder.
+            Developer.
           </motion.span>
         </h2>
 
@@ -195,16 +195,16 @@ export function About() {
         <div className="mt-16 grid gap-12 lg:grid-cols-12 lg:gap-16">
           <motion.div {...anim(0.5)} className="lg:col-span-7">
             <p className="max-w-xl text-base leading-relaxed text-white/70 sm:text-lg">
-              I&apos;m a science student in Dhaka. Since 2024, I&apos;ve built
-              <span className="text-white"> four live web platforms for three organizations</span>
-              {" "}and an open-source PostgreSQL security tool. My work includes a
-              website for a 1,000+ member club, two finance systems, and a
-              study-abroad consultancy portal.
+              I&apos;m a science student in Dhaka, and I&apos;ve been building web
+              platforms since 2024. Four are live across three organizations.
+              One is the first website for DCC Nature Study Club, which has more
+              than 1,000 members. I also made an open-source tool for checking
+              PostgreSQL authentication code.
             </p>
             <p className="mt-6 max-w-xl text-sm leading-relaxed text-white/45 sm:text-base">
-              These are systems built for real organizations. I focus on
-              accessible interfaces, careful data access, and software that is
-              practical to maintain.
+              I like work that solves a clear problem for the people using it.
+              I care about accessible interfaces and software that is practical
+              to maintain.
             </p>
           </motion.div>
 
