@@ -63,13 +63,18 @@ export function SiteHeader() {
   }, [])
 
   useEffect(() => {
-    if (mobileMenu) {
-      document.body.style.overflow = "hidden"
-    } else {
-      document.body.style.overflow = ""
+    if (!mobileMenu) return
+
+    const previousOverflow = document.body.style.overflow
+    const onKeyDown = (event: KeyboardEvent) => {
+      if (event.key === "Escape") setMobileMenu(false)
     }
+
+    document.body.style.overflow = "hidden"
+    document.addEventListener("keydown", onKeyDown)
     return () => {
-      document.body.style.overflow = ""
+      document.body.style.overflow = previousOverflow
+      document.removeEventListener("keydown", onKeyDown)
     }
   }, [mobileMenu])
 

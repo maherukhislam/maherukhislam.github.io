@@ -191,11 +191,12 @@ export function Showcase() {
         : "calc(66.666% - 2px)"
 
   return (
-    <section
-      id="showcase"
-      aria-labelledby="showcase-heading"
-      className="relative w-full overflow-hidden border-t border-line bg-surface px-6 py-24 text-white md:px-10"
-    >
+    <>
+      <section
+        id="showcase"
+        aria-labelledby="showcase-heading"
+        className="relative w-full overflow-hidden border-t border-line bg-surface px-6 py-24 text-white md:px-10"
+      >
       <div className="relative z-10 mx-auto w-full max-w-6xl">
         <SectionLabel text="Showcase" />
         <span id="showcase-heading" className="sr-only">
@@ -329,7 +330,8 @@ export function Showcase() {
       </div>
       </div>
 
+      </section>
       <ProjectModal project={selected} onClose={() => setSelected(null)} />
-    </section>
+    </>
   )
 }
