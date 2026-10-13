@@ -209,6 +209,41 @@ html {
   }
 }
 
+/* React Bits Spotlight Card treatment, tuned to the portfolio's green signal. */
+.spotlight-card {
+  --spotlight-x: 50%;
+  --spotlight-y: 50%;
+  isolation: isolate;
+  position: relative;
+}
+
+.spotlight-card::before {
+  position: absolute;
+  z-index: 0;
+  inset: 0;
+  border-radius: inherit;
+  background: radial-gradient(
+    340px circle at var(--spotlight-x) var(--spotlight-y),
+    rgb(134 239 172 / 0.12),
+    transparent 68%
+  );
+  content: "";
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 240ms ease;
+}
+
+.spotlight-card:hover::before,
+.spotlight-card:focus-within::before {
+  opacity: 1;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .spotlight-card::before {
+    transition: none;
+  }
+}
+
 .animate-marquee {
   animation: marquee 10s linear infinite;
 }

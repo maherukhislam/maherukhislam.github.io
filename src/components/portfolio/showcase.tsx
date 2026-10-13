@@ -23,9 +23,23 @@ function ProjectCard({
   onOpen: (p: Project) => void
 }) {
   return (
-    <div className="group flex h-full flex-col rounded-xl border border-line bg-surface-raised transition-colors duration-200 hover:border-white/20">
+    <div
+      className="spotlight-card group flex h-full flex-col rounded-xl border border-line bg-surface-raised transition-colors duration-200 hover:border-white/20"
+      onPointerMove={(event) => {
+        if (event.pointerType !== "mouse") return
+        const bounds = event.currentTarget.getBoundingClientRect()
+        event.currentTarget.style.setProperty(
+          "--spotlight-x",
+          `${event.clientX - bounds.left}px`,
+        )
+        event.currentTarget.style.setProperty(
+          "--spotlight-y",
+          `${event.clientY - bounds.top}px`,
+        )
+      }}
+    >
       {/* Top visual band with big index */}
-      <div className="relative flex h-36 items-end overflow-hidden border-b border-line p-5">
+      <div className="relative z-10 flex h-36 items-end overflow-hidden border-b border-line p-5">
         <span
           aria-hidden="true"
           className="pointer-events-none absolute -right-3 -top-8 select-none font-display text-[7rem] leading-none text-white/[0.04]"
@@ -57,7 +71,7 @@ function ProjectCard({
         </span>
       </div>
 
-      <div className="flex flex-1 flex-col p-5">
+      <div className="relative z-10 flex flex-1 flex-col p-5">
         <p className="text-sm leading-relaxed text-white/55">{project.short}</p>
 
         <ul className="mt-4 flex flex-wrap gap-2">
