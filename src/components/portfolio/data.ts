@@ -1,6 +1,6 @@
 export const profile = {
   name: "Md. Maherukh Islam",
-  role: "Creative Web Builder",
+  role: "Junior Web Developer",
   secondaryRole: "Student Developer",
   tagline:
     "Student developer in Dhaka. Four live platforms for three organizations, plus an open-source PostgreSQL security tool.",
@@ -44,6 +44,11 @@ export const techStack = [
   { name: "Git", icon: "gitbranch" as const },
   { name: "GitHub", icon: "github" as const },
   { name: "Vite", icon: "flame" as const },
+  { name: "HTML", icon: "code" as const },
+  { name: "Web Development", icon: "code" as const },
+  { name: "Full-Stack Development", icon: "code" as const },
+  { name: "Web Infrastructure", icon: "cloud" as const },
+  { name: "User Interface Design", icon: "palette" as const },
 ]
 
 export const stats: { value: number; suffix?: string; label: string }[] = [
@@ -227,7 +232,7 @@ export const skillGroups = [
   {
     title: "Frontend",
     icon: "layout" as const,
-    skills: ["React", "TypeScript", "Tailwind CSS", "Next.js", "Vite", "HTML5 & CSS3"],
+    skills: ["React", "TypeScript", "JavaScript", "HTML", "Tailwind CSS", "Next.js", "Vite", "HTML5 & CSS3"],
   },
   {
     title: "Backend & Data",
@@ -244,6 +249,11 @@ export const skillGroups = [
       "UI Engineering",
       "Git & GitHub",
     ],
+  },
+  {
+    title: "Web Development",
+    icon: "wrench" as const,
+    skills: ["Web Development", "Full-Stack Development", "Web Infrastructure", "User Interface Design"],
   },
 ]
 
@@ -330,6 +340,17 @@ export const leadership = [
     orgNote: "Dhaka Commerce College",
     period: "2025",
     desc: "Setup and coordination on the floor at one of the college's biggest events of the year.",
+  },
+]
+
+export const experience = [
+  {
+    role: "Junior Web Developer",
+    org: "A2 Abroad & A2 English Academy",
+    period: "Sep 2026–present",
+    location: "Mirpur, Dhaka, Bangladesh",
+    arrangement: "Contract · Hybrid",
+    desc: "Support web development for A2 Abroad and A2 English Academy by building and maintaining the platforms behind their student-facing services, from feature implementation to troubleshooting. Continuing the work started on the academy’s student portal as a formal engagement.",
   },
 ]
 

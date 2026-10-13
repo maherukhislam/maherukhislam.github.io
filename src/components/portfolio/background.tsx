@@ -8,7 +8,7 @@ import {
   HandHeart,
   Landmark,
 } from "lucide-react"
-import { education, interests, leadership } from "./data"
+import { education, experience, interests, leadership } from "./data"
 import { Timeline } from "@/components/ui/timeline"
 import { SectionLabel } from "./section-label"
 import { SpotlightCard } from "./spotlight-card"
@@ -43,7 +43,7 @@ export function Background() {
           className="mt-6 max-w-3xl text-[clamp(36px,6vw,72px)] font-semibold leading-[1.0] tracking-tight text-balance"
         >
           <motion.span {...reveal(0)} className="block text-white">
-            Education &amp; Leadership.
+            Experience, Education &amp; Leadership.
           </motion.span>
         </h2>
 
@@ -52,6 +52,30 @@ export function Background() {
         <div className="mt-10">
           <Timeline
             data={[
+              {
+                title: "Experience",
+                content: (
+                  <ul className="space-y-4">
+                    {experience.map((item) => (
+                      <li key={`${item.org}-${item.role}`}>
+                        <SpotlightCard className="rounded-xl border border-white/15 bg-surface-raised p-6">
+                          <div className="flex flex-wrap items-start justify-between gap-3">
+                            <div>
+                              <h4 className="text-base font-semibold text-white">{item.role}</h4>
+                              <p className="mt-1 text-sm text-white/60">{item.org}</p>
+                            </div>
+                            <span className="rounded-full border border-signal/30 bg-signal/10 px-2.5 py-1 font-mono text-[10px] text-signal">Current</span>
+                          </div>
+                          <p className="mt-3 flex flex-wrap gap-x-3 gap-y-1 font-mono text-xs text-white/45">
+                            <span>{item.period}</span><span>{item.arrangement}</span><span>{item.location}</span>
+                          </p>
+                          <p className="mt-4 text-sm leading-relaxed text-white/60">{item.desc}</p>
+                        </SpotlightCard>
+                      </li>
+                    ))}
+                  </ul>
+                ),
+              },
               {
                 title: "Education",
                 content: (

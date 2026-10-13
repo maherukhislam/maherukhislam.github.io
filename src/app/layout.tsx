@@ -20,7 +20,7 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://maherukhislam.github.io"),
-  title: "MAHERUKH ISLAM - Creative Web Builder",
+  title: "MAHERUKH ISLAM - Junior Web Developer",
   description:
     "Student developer in Dhaka, Bangladesh. Four live web platforms for three organizations, plus an open-source PostgreSQL security tool.",
   keywords: [
@@ -35,7 +35,7 @@ export const metadata: Metadata = {
   ],
   authors: [{ name: "Md. Maherukh Islam" }],
   openGraph: {
-    title: "MAHERUKH ISLAM - Creative Web Builder",
+    title: "MAHERUKH ISLAM - Junior Web Developer",
     description:
       "Four live web platforms for three organizations, plus an open-source PostgreSQL security tool.",
     siteName: "Md. Maherukh Islam - Portfolio",
@@ -45,13 +45,13 @@ export const metadata: Metadata = {
         url: "/og-image.png",
         width: 1200,
         height: 630,
-        alt: "MAHERUKH ISLAM - Creative Web Builder",
+        alt: "MAHERUKH ISLAM - Junior Web Developer",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "MAHERUKH ISLAM - Creative Web Builder",
+    title: "MAHERUKH ISLAM - Junior Web Developer",
     description:
       "Four live web platforms for three organizations, plus an open-source PostgreSQL security tool.",
     images: ["/og-image.png"],

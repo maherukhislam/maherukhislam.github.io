@@ -1,8 +1,8 @@
 # Md. Maherukh Islam
 
-**Creative Web Builder · Student Developer**  
+**Junior Web Developer · Student Developer**
 Dhaka, Bangladesh · [maherukhislam2007@gmail.com](mailto:maherukhislam2007@gmail.com)  
-Open for select web and product work.
+Contract · Hybrid · Mirpur, Dhaka, Bangladesh.
 
 Student developer in Dhaka. I’ve built four live web platforms for three organizations and an open-source PostgreSQL security tool.
 
@@ -18,6 +18,14 @@ These are systems built for real organizations. I focus on accessible interfaces
 - **1,000+** members in the club served by one platform
 - **3** organizations served
 - **1** open-source PostgreSQL security tool
+
+## Experience
+
+### Junior Web Developer — A2 Abroad & A2 English Academy
+
+**Contract · Hybrid · Mirpur, Dhaka, Bangladesh · Sep 2026–present**
+
+Support web development for A2 Abroad and A2 English Academy by building and maintaining the platforms behind their student-facing services, from feature implementation to troubleshooting. This formal engagement continues the work started on the academy’s student portal.
 
 ## Projects
 
@@ -93,7 +101,7 @@ A portal for an IELTS coaching center in Dhaka that previously managed finances 
 
 ### Frontend
 
-React, TypeScript, Tailwind CSS, Next.js, Vite, HTML5, CSS3.
+Web development, full-stack development, web infrastructure, user interface design, HTML, JavaScript, Tailwind CSS, React, TypeScript, Next.js, Vite, HTML5, CSS3.
 
 ### Backend and data
 

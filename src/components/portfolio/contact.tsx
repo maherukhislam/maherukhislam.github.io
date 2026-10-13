@@ -119,7 +119,7 @@ export function SiteFooter() {
           <div className="leading-tight">
             <p className="text-sm font-semibold text-white/90">{profile.name}</p>
             <p className="font-mono text-[10px] tracking-[0.15em] text-white/55 uppercase">
-              Creative Web Builder
+              Junior Web Developer
             </p>
           </div>
         </div>

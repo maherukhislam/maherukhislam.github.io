@@ -97,7 +97,7 @@ function IdCard({ onClose }: { onClose: () => void }) {
               Md. Maherukh Islam
             </p>
             <p className="mt-1 font-mono text-[10px] uppercase tracking-[0.25em] text-white/50">
-              Creative Web Builder
+              Junior Web Developer
             </p>
           </div>
           <span
