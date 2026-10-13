@@ -37,6 +37,7 @@ export default function ProjectModal({
 
   useEffect(() => {
     if (!project) return
+    const previousOverflow = document.body.style.overflow
     closeRef.current?.focus()
     const onKey = (e: KeyboardEvent) => {
       if (e.key === "Escape") onClose()
@@ -45,7 +46,7 @@ export default function ProjectModal({
     document.body.style.overflow = "hidden"
     return () => {
       document.removeEventListener("keydown", onKey)
-      document.body.style.overflow = ""
+      document.body.style.overflow = previousOverflow
     }
   }, [project, onClose])
 
@@ -77,7 +78,7 @@ export default function ProjectModal({
               <div>
                 <p className="font-mono text-[10px] uppercase tracking-[0.15em] text-white/60">
                   {project.category}
-                  {project.timeline ? ` Â· ${project.timeline}` : ""}
+                  {project.timeline ? ` · ${project.timeline}` : ""}
                 </p>
                 <h3 className="mt-2 text-2xl font-semibold tracking-tight text-white sm:text-3xl">
                   {project.title}
@@ -87,7 +88,7 @@ export default function ProjectModal({
                   {project.version ? (
                     <span className="font-mono text-white/60">
                       {" "}
-                      Â· {project.version} Â· {project.license}
+                      · {project.version} · {project.license}
                     </span>
                   ) : null}
                 </p>
