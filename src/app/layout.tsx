@@ -22,7 +22,7 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://maherukhislam.github.io"),
   title: "MAHERUKH ISLAM - Creative Web Builder",
   description:
-    "Student web developer in Dhaka, Bangladesh. Five live platforms, 1,000+ users, three organizations: membership portals, treasury systems, and sites that work on any phone.",
+    "Student developer in Dhaka, Bangladesh. Four live web platforms for three organizations, plus an open-source PostgreSQL security tool.",
   keywords: [
     "Maherukh Islam",
     "web developer",
@@ -37,7 +37,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "MAHERUKH ISLAM - Creative Web Builder",
     description:
-      "Building systems that just work. Five live platforms, 1,000+ users: membership portals, treasury systems, accessible UI.",
+      "Four live web platforms for three organizations, plus an open-source PostgreSQL security tool.",
     siteName: "Md. Maherukh Islam - Portfolio",
     type: "website",
     images: [
@@ -53,7 +53,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "MAHERUKH ISLAM - Creative Web Builder",
     description:
-      "Building systems that just work. Five live platforms, 1,000+ users: membership portals, treasury systems, accessible UI.",
+      "Four live web platforms for three organizations, plus an open-source PostgreSQL security tool.",
     images: ["/og-image.png"],
   },
 };

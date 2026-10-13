@@ -86,9 +86,9 @@ export function Contact() {
                 {profile.email}
               </a>
               <p className="mt-4 text-sm leading-relaxed text-white/45">
-                Currently a science student (HSC 2026) in Dhaka, planning to
-                study CS or software engineering, and building useful web tools
-                in Bangladesh along the way.
+                I&apos;m a science student in Dhaka, planning to study computer
+                science or software engineering while building useful web
+                tools for organizations in Bangladesh.
               </p>
               <a
                 href={`mailto:${profile.email}`}

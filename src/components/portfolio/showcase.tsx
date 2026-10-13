@@ -302,7 +302,7 @@ export function Showcase() {
               </div>
               <div>
                 <p className="mb-5 font-mono text-[11px] uppercase tracking-[0.2em] text-white/50">
-                  Additional certificates &amp; achievements
+                  Other selected recognition
                 </p>
                 <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
                   {recognitionAdditional.map((item, i) => (

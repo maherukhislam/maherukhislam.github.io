@@ -145,7 +145,7 @@ export function Background() {
                 ),
               },
               {
-                title: "Currently Learning",
+                title: "Areas of Interest",
                 content: (
                   <div className="rounded-xl border border-line bg-surface-raised px-6 py-5">
                     <ul className="flex flex-wrap gap-2">

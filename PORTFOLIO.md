@@ -4,20 +4,20 @@
 Dhaka, Bangladesh · [maherukhislam2007@gmail.com](mailto:maherukhislam2007@gmail.com)  
 Open for select web and product work.
 
-Student developer in Dhaka. I have shipped five live platforms used by 1,000+ students across three organizations, and continue to maintain them.
+Student developer in Dhaka. I’ve built four live web platforms for three organizations and an open-source PostgreSQL security tool.
 
 ## About
 
-I’m a science student in Dhaka. Since 2024, I’ve built and maintained five production platforms: a 1,000-member club’s first website, two treasury portals, a consultancy portal, and a security tool. Roughly 1,000 students and three organizations use these systems.
+I’m a science student in Dhaka. Since 2024, I’ve built four live web platforms for three organizations and an open-source PostgreSQL security tool. My work includes a website for a 1,000+ member club, two finance systems, and a study-abroad consultancy portal.
 
-These are working systems, not demos. Real memberships and money run through them, so I care about accessibility and row-level security as much as I care about React. I like building, shipping, and maintaining useful software.
+These are systems built for real organizations. I focus on accessible interfaces, careful data access, and software that is practical to maintain.
 
 ## At a glance
 
-- **5** live platforms shipped
-- **1,000+** students served
-- **12** certificates and awards
-- **3** organizations moved online
+- **4** live web platforms
+- **1,000+** members in the club served by one platform
+- **3** organizations served
+- **1** open-source PostgreSQL security tool
 
 ## Projects
 
@@ -42,7 +42,7 @@ A login-gated treasury portal for the club where I serve as treasurer. It replac
 
 - **Problem:** Manual finance records took days to audit and allowed mistakes to slip through.
 - **Solution:** Built a portal using React 19, Zustand, and Supabase. Members see only the screens allowed by their roles; receipts are signed and actions are logged.
-- **Impact:** Audits that took days are now instant, math errors are down to zero, and the next treasurer inherits a system instead of a box of receipts.
+- **Impact:** Finance records are centralized and actions are traceable, making reviews and handover easier than paper logs and scattered spreadsheets.
 - **Modules:** Transactions and finance, approvals, member management, notices, and reports.
 - **Access and operations:** Role-based screens, traceable finance and admin actions, and no public registration. Club admins create accounts manually.
 - **Technology:** React 19, Zustand, Cloudflare Workers, Supabase, PostgreSQL.
@@ -56,7 +56,7 @@ A portal for a Dhaka consultancy that helps students apply to programs in the UK
 - **Problem:** Inquiries, documents, and counseling sessions were tracked by hand.
 - **Solution:** Built separate views for students, consultants, and administrators. Students register, submit details, and track progress; consultants see assigned students; admins record expenses, generate reports, and monitor the pipeline.
 - **Impact:** Students can follow application progress in the portal, and staff can manage the pipeline in one place.
-- **Technology:** React, TypeScript, responsive CSS, authentication UI, form UX.
+- **Technology:** React, TypeScript.
 
 ### Postgres Auth Security Review
 
@@ -87,7 +87,7 @@ A portal for an IELTS coaching center in Dhaka that previously managed finances 
 - **Problem:** Fees, installments, and expenses were difficult to track across paper records and spreadsheets.
 - **Solution:** Built one role-gated portal for payments, upcoming installments, expenses, and reports.
 - **Impact:** Owners can see the financial position on a given day without waiting for a manual cashbook reconciliation.
-- **Technology:** React, TypeScript, responsive CSS, authentication UI, form UX.
+- **Technology:** React, TypeScript.
 
 ## Skills and tools
 
@@ -103,25 +103,14 @@ PostgreSQL, Supabase, Python, SQLite, Cloudflare Workers.
 
 Web accessibility (WCAG), responsive design, performance, UI engineering, Git, GitHub.
 
-### Core stack
-
-React, TypeScript, Next.js, Tailwind CSS, PostgreSQL, Supabase.
-
-### Additional technologies
-
-JavaScript, Cloudflare, Vite.
+Also used: JavaScript, Cloudflare, and Vite.
 
 ## Education
 
 ### HSC — Science Group
 
-**Dhaka Commerce College · 2024–present · HSC 2026 candidate**  
-Subjects: Higher Mathematics, Physics, Chemistry, ICT.  
-Planning to study computer science or software engineering.
-
-### SSC — Science Division
-
-Completed in 2024.
+**Dhaka Commerce College · 2024–present**<br>
+Subjects: Higher Mathematics, Physics, Chemistry, and ICT. Planning to study computer science or software engineering.
 
 ## Leadership and service
 
@@ -147,6 +136,8 @@ Supported event setup and on-site coordination at one of the college’s major a
 - **APAC Cyber Hygiene Training** — Certified, The Asia Foundation and SAJIDA, with CyberPeace Institute, Global Cyber Alliance, and Google.org (May 2025).
 
 ### Additional achievements
+
+The website highlights selected items; this document keeps the full list.
 
 - **1st Place — ECO Spark Challenge 1.0** — Quiz Competition, DCC Nature Study Club.
 - **2nd Place — IT Quiz (Junior)** — DCC Intra College CSE Fest 2025, Dhaka Commerce College (May 2025).

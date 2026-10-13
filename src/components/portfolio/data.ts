@@ -3,11 +3,11 @@ export const profile = {
   role: "Creative Web Builder",
   secondaryRole: "Student Developer",
   tagline:
-    "Student developer in Dhaka. Five live platforms, 1,000+ users, three organizations, and every system still running.",
+    "Student developer in Dhaka. Four live platforms for three organizations, plus an open-source PostgreSQL security tool.",
   location: "Dhaka, Bangladesh",
   email: "maherukhislam2007@gmail.com",
   availability: "Open for select web & product work",
-  educationNote: "HSC 2026 candidate · Science Group",
+  educationNote: "Science Group · Dhaka Commerce College",
 }
 
 export const socials = [
@@ -47,10 +47,10 @@ export const techStack = [
 ]
 
 export const stats: { value: number; suffix?: string; label: string }[] = [
-  { value: 5, label: "Live platforms shipped" },
-  { value: 1000, suffix: "+", label: "Students served" },
-  { value: 12, label: "Certificates & awards" },
-  { value: 3, label: "Organizations moved online" },
+  { value: 4, label: "Live platforms" },
+  { value: 1000, suffix: "+", label: "Club members" },
+  { value: 3, label: "Organizations served" },
+  { value: 1, label: "Open-source security tool" },
 ]
 
 export const coreStack = [
@@ -121,7 +121,7 @@ export const projects: Project[] = [
     index: "02",
     title: "Financial Management System",
     short:
-      "I'm the club treasurer, and I built the treasury portal I now run. Role-based access, signed receipts, and a log of every action. Audits went from days to instant.",
+      "As the club treasurer, I built the portal I use to manage its finances, with role-based access, signed receipts, and an audit trail.",
     url: "https://finance.dccnsc.org",
     urlLabel: "finance.dccnsc.org",
     category: "Internal Tool / Infrastructure",
@@ -133,7 +133,7 @@ export const projects: Project[] = [
     solution:
       "A login-gated portal built on React 19 + Zustand and a Supabase backend. Each member sees only what their role allows, receipts are signed, and every action gets logged.",
     impact:
-      "Audits that took days are now instant. Math errors are down to zero, and the next treasurer inherits a system instead of a shoebox of receipts.",
+      "Finance records are centralized and actions are traceable, making reviews and handover easier than paper logs and scattered spreadsheets.",
     tech: ["React 19", "Zustand", "Cloudflare Workers", "Supabase", "PostgreSQL"],
     modules: [
       { name: "Transactions / Finance", purpose: "Track club money, dues, and payments" },
@@ -173,7 +173,7 @@ export const projects: Project[] = [
       "One portal, three views. Students sign up, upload their details, and track their own progress. Consultants see only their assigned students. Admins record expenses, pull reports, and watch the whole pipeline.",
     impact:
       "Students now apply and follow their own progress in the portal instead of chasing updates over the phone, and the staff finally has one place where everything is visible.",
-    tech: ["React", "TypeScript", "Responsive CSS", "Auth UI", "Form UX"],
+    tech: ["React", "TypeScript"],
   },
   {
     id: "pg-auth",
@@ -219,7 +219,7 @@ export const projects: Project[] = [
       "One portal now holds all of it: who paid, who owes the next installment, what was spent, and a report at the end of the month. Staff only see the financial records their role allows.",
     impact:
       "The owners can check exactly where the money stands on any given day, without waiting for someone to balance the cashbook first.",
-    tech: ["React", "TypeScript", "Responsive CSS", "Auth UI", "Form UX"],
+    tech: ["React", "TypeScript"],
   },
 ]
 
@@ -305,32 +305,15 @@ export const recognitionAdditional = [
     date: "Jun 2025",
   },
   {
-    title: "Environment Quiz Olympiad",
-    note: "Participation",
-    org: "DCC Nature Study Club",
-    date: "Nov 2024",
-  },
-  {
     title: "1st DCCSC Online Quiz",
     note: "Achievement",
     org: "DCC Science Club",
-  },
-  {
-    title: "Bijoy Quiz Competition 2024",
-    note: "Victory Day",
-    org: "University of Dhaka",
   },
   {
     title: "National Earth Olympiad 2025",
     note: "Certificate of Recognition",
     org: "BYEI",
     date: "Jul 2025",
-  },
-  {
-    title: "Manifesto Talk: Youth, Environment & Climate",
-    note: "Participation",
-    org: "Department of Environment",
-    date: "May 2025",
   },
 ]
 
@@ -361,16 +344,9 @@ export const education: {
   {
     degree: "HSC - Science Group",
     school: "Dhaka Commerce College",
-    period: "2024-present · HSC 2026",
+    period: "2024-present",
     subjects: ["Higher Mathematics", "Physics", "Chemistry", "ICT"],
     current: true,
     next: "Planning to study CS or software engineering next",
-  },
-  {
-    degree: "SSC - Science Division",
-    school: "",
-    period: "Completed 2024",
-    subjects: [],
-    current: false,
   },
 ]

@@ -121,7 +121,7 @@ function IdCard({ onClose }: { onClose: () => void }) {
           <div className="flex items-center gap-2">
             <Sparkles className="h-3 w-3 text-white/40" aria-hidden="true" />
             <dt className="sr-only">Status</dt>
-            <dd className="text-white/80">5 live platforms · 1,000+ users</dd>
+            <dd className="text-white/80">4 live platforms · 1 open-source tool</dd>
           </div>
         </dl>
 
@@ -194,17 +194,16 @@ export function About() {
         <div className="mt-16 grid gap-12 lg:grid-cols-12 lg:gap-16">
           <motion.div {...anim(0.5)} className="lg:col-span-7">
             <p className="max-w-xl text-base leading-relaxed text-white/70 sm:text-lg">
-              I&apos;m a science student in Dhaka. Since 2024 I&apos;ve built
-              and still maintain <span className="text-white">five production platforms</span>: a
-              1,000-member club&apos;s first website, two treasury portals, a
-              consultancy portal, and a security tool. Roughly 1,000 students
-              and three organizations use them daily.
+              I&apos;m a science student in Dhaka. Since 2024, I&apos;ve built
+              <span className="text-white"> four live web platforms for three organizations</span>
+              {" "}and an open-source PostgreSQL security tool. My work includes a
+              website for a 1,000+ member club, two finance systems, and a
+              study-abroad consultancy portal.
             </p>
             <p className="mt-6 max-w-xl text-sm leading-relaxed text-white/45 sm:text-base">
-              None of these are demo projects. Real memberships and real money
-              run through them, which is why I care about WCAG and row-level
-              security as much as I care about React. That&apos;s the habit
-              I&apos;d bring to a team: build it, ship it, keep it running.
+              These are systems built for real organizations. I focus on
+              accessible interfaces, careful data access, and software that is
+              practical to maintain.
             </p>
           </motion.div>
 
