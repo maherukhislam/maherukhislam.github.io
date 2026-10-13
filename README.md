@@ -4,7 +4,7 @@ Personal portfolio of **Md. Maherukh Islam** - student web developer in Dhaka, B
 
 ## Tech stack
 
-- **Next.js** (App Router, static export) + React 19 + TypeScript
+- **Next.js** (App Router, static export) + React 19 + TypeScript 
 - **Tailwind CSS v4** - dark, typography-first brutalist design system
 - **Framer Motion** - page transitions, reveals and micro-interactions
 - **GitHub Pages** - deployed automatically via GitHub Actions
