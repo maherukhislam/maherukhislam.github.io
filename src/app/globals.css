@@ -217,6 +217,11 @@ html {
   position: relative;
 }
 
+.spotlight-card > * {
+  position: relative;
+  z-index: 1;
+}
+
 .spotlight-card::before {
   position: absolute;
   z-index: 0;

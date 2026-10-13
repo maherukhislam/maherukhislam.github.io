@@ -6,6 +6,7 @@ import Counter from "@/components/Counter"
 import { GraduationCap, MapPin, Sparkles } from "lucide-react"
 import { coreStack, profile, stats } from "./data"
 import { SectionLabel } from "./section-label"
+import { SpotlightCard } from "./spotlight-card"
 
 /* Stat number that counts up when scrolled into view (React Bits Counter) */
 function AnimatedStat({
@@ -23,7 +24,7 @@ function AnimatedStat({
   const started = reduceMotion || inView
 
   return (
-    <div ref={ref} className="px-8 py-14">
+    <SpotlightCard ref={ref} className="bg-surface-raised px-8 py-14">
       <dd className="flex items-baseline text-4xl font-semibold tracking-tight text-white tabular-nums">
         <Counter
           value={started ? value : 0}
@@ -38,7 +39,7 @@ function AnimatedStat({
       <dt className="mt-2 font-mono text-[10px] uppercase tracking-[0.2em] text-white/60">
         {label}
       </dt>
-    </div>
+    </SpotlightCard>
   )
 }
 

@@ -6,6 +6,7 @@ import { projects, recognitionAdditional, recognitionHighlights, type Project } 
 import ProjectModal from "./project-modal"
 import { TechStackList } from "./tech-stack-list"
 import { SectionLabel } from "./section-label"
+import { SpotlightCard } from "./spotlight-card"
 
 type TabId = "projects" | "certificates" | "tech"
 
@@ -23,21 +24,7 @@ function ProjectCard({
   onOpen: (p: Project) => void
 }) {
   return (
-    <div
-      className="spotlight-card group flex h-full flex-col rounded-xl border border-line bg-surface-raised transition-colors duration-200 hover:border-white/20"
-      onPointerMove={(event) => {
-        if (event.pointerType !== "mouse") return
-        const bounds = event.currentTarget.getBoundingClientRect()
-        event.currentTarget.style.setProperty(
-          "--spotlight-x",
-          `${event.clientX - bounds.left}px`,
-        )
-        event.currentTarget.style.setProperty(
-          "--spotlight-y",
-          `${event.clientY - bounds.top}px`,
-        )
-      }}
-    >
+    <SpotlightCard className="group flex h-full flex-col rounded-xl border border-line bg-surface-raised transition-colors duration-200 hover:border-white/20">
       {/* Top visual band with big index */}
       <div className="relative z-10 flex h-36 items-end overflow-hidden border-b border-line p-5">
         <span
@@ -112,7 +99,7 @@ function ProjectCard({
           ) : null}
         </div>
       </div>
-    </div>
+    </SpotlightCard>
   )
 }
 
@@ -130,7 +117,7 @@ function CertCard({
   highlight?: boolean
 }) {
   return (
-    <div
+    <SpotlightCard
       className={`flex h-full flex-col rounded-xl border p-5 transition-colors duration-200 ${
         highlight
           ? "border-white/15 bg-surface-raised hover:border-white/25"
@@ -155,7 +142,7 @@ function CertCard({
       {date ? (
         <p className="mt-auto pt-4 font-mono text-[10px] text-white/60">{date}</p>
       ) : null}
-    </div>
+    </SpotlightCard>
   )
 }
 

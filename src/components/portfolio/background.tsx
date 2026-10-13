@@ -11,6 +11,7 @@ import {
 import { education, interests, leadership } from "./data"
 import { Timeline } from "@/components/ui/timeline"
 import { SectionLabel } from "./section-label"
+import { SpotlightCard } from "./spotlight-card"
 
 export function Background() {
   const reduceMotion = useReducedMotion()
@@ -56,14 +57,14 @@ export function Background() {
                 content: (
                   <ul className="space-y-4">
                     {education.map((item) => (
-                      <li
-                        key={item.degree}
-                        className={`rounded-xl border p-6 ${
+                      <li key={item.degree}>
+                        <SpotlightCard
+                          className={`rounded-xl border p-6 ${
                           item.current
                             ? "border-white/15 bg-surface-raised"
                             : "border-line bg-surface-raised"
-                        }`}
-                      >
+                          }`}
+                        >
                         <div className="flex flex-wrap items-center justify-between gap-2">
                           <h4 className="text-base font-semibold text-white">{item.degree}</h4>
                           {item.current ? (
@@ -104,6 +105,7 @@ export function Background() {
                             {item.next}
                           </p>
                         ) : null}
+                        </SpotlightCard>
                       </li>
                     ))}
                   </ul>
@@ -116,14 +118,14 @@ export function Background() {
                     {leadership.map((item, i) => {
                       const Icon = i === 0 ? Landmark : HandHeart
                       return (
-                        <li
-                          key={item.role}
-                          className={`rounded-xl border p-6 transition-colors hover:border-white/20 ${
+                        <li key={item.role}>
+                          <SpotlightCard
+                            className={`rounded-xl border p-6 transition-colors hover:border-white/20 ${
                             i === 0
                               ? "border-white/15 bg-surface-raised"
                               : "border-line bg-surface-raised"
-                          }`}
-                        >
+                            }`}
+                          >
                           <div className="flex items-center justify-between">
                             <span className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-line bg-surface text-white/70">
                               <Icon className="h-4 w-4" aria-hidden="true" />
@@ -138,6 +140,7 @@ export function Background() {
                             ) : null}
                           </p>
                           <p className="mt-2 text-sm leading-relaxed text-white/45">{item.desc}</p>
+                          </SpotlightCard>
                         </li>
                       )
                     })}
@@ -147,7 +150,7 @@ export function Background() {
               {
                 title: "Areas of Interest",
                 content: (
-                  <div className="rounded-xl border border-line bg-surface-raised px-6 py-5">
+                  <SpotlightCard className="rounded-xl border border-line bg-surface-raised px-6 py-5">
                     <ul className="flex flex-wrap gap-2">
                       {interests.map((item) => (
                         <li
@@ -158,7 +161,7 @@ export function Background() {
                         </li>
                       ))}
                     </ul>
-                  </div>
+                  </SpotlightCard>
                 ),
               },
             ]}
